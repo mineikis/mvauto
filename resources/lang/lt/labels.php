@@ -1,11 +1,13 @@
 <?php
 
 return [
+'title'		   => 'MVAuto - Naudotų automobilių prekyba',
+
+//master, header, footer
 'pradzia'      => 'Pradžia',
 'apiemus'      => 'Apie Mus',
 'automobiliai' => 'Automobiliai',
 'kontaktai'    => 'Kontaktai',
-'title'		   => 'MVAuto - Naudotų automobilių prekyba',
 'susisiekite_su_mumis' => 'Susisiekite su mumis',
 'apie' => 'Apie',
 'issirinkite' => 'Išsirinkite',

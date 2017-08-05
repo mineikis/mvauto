@@ -1,11 +1,13 @@
 <?php
 
 return [
+'title'		   => 'MVAuto - Naudotų automobilių prekyba',
+
+//master, header, footer
 'pradzia'      => 'Начало',
 'apiemus'      => 'О нас',
 'automobiliai' => 'Aвтомобили',
 'kontaktai'    => 'Контакты',
-'title'		   => 'MVAuto - Продажа подержанных автомобилей',
 'susisiekite_su_mumis' => 'Cвяжитесь с нами',
 'apie' => 'O',
 'issirinkite' => 'выберите',
