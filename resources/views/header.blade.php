@@ -1,13 +1,13 @@
 
-    <header>
+<header>
 	
-	    <!-- ================================================== HEADER ================================================== -->
-    <header>
+ <!-- ================================================== HEADER ================================================== -->
+ <header>
 
-        <!-- top bar -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
+    <!-- top bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
                     <!-- notification
                     <div class="notification">
                         <p>This is simple notification message and you can insert <a href="#">anchor</a> inside too.</p>
@@ -17,80 +17,79 @@
 
                     <!-- language -->
                     <div class="social">
-						<ul class="clearfix">
-						@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-							<li>
-								<a rel="alternate" class="tip-below success" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-								{{ $properties['abbr'] }}
-								</a>
-							</li>
-						@endforeach
-					</ul>
-                    </div>
-                    <!-- language -->
-
+                      <ul class="clearfix">
+                          @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                          <li>
+                            <a rel="alternate" class="tip-below success" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                {{ $properties['abbr'] }}
+                            </a>
+                        </li>
+                        @endforeach
+                    </ul>
                 </div>
+                <!-- language -->
+
             </div>
         </div>
-        <!-- .top bar -->
-	
-        <!-- navigation and logo -->
-        <div class="navigation clearfix">
-            <div class="container">
-                <div class="row">
+    </div>
+    <!-- .top bar -->
 
-                    <!-- logo -->
-                    <div class="logo">
-                        <a href="/">
-                            <img src="{{ URL::asset('images/logo.png') }}" title="MVAuto" alt="MVAuto" />
-                        </a>
-                    </div>
-                    <!-- .logo -->
+    <!-- navigation and logo -->
+    <div class="navigation clearfix">
+        <div class="container">
+            <div class="row">
 
-                    <!-- navigation -->
-                    <nav>
+                <!-- logo -->
+                <div class="logo">
+                    <a href="/">
+                        <img src="{{ URL::asset('images/logo.png') }}" title="{{Config::get('constants.imones_pav')}}" alt="{{Config::get('constants.imones_pav')}}" />
+                    </a>
+                </div>
+                <!-- .logo -->
 
-                        <!-- navigation wrap -->
-                        <div class="main-nav">
+                <!-- navigation -->
+                <nav>
 
-                            <!-- navigation search -->
-                            <div class="nav-search">
-                                <form method="post" action="#">
-                                    <fieldset>
-                                        <span class="icon-search"></span>
-                                        <input type="text" value="Type term and hit enter..." onfocus="if(this.value=='Type term and hit enter...'){this.value=''}" onblur="if(this.value==''){this.value='Type term and hit enter...'}" />
-                                    </fieldset>
-                                </form>
-                            </div>
-                            <!-- .navigation search -->
+                    <!-- navigation wrap -->
+                    <div class="main-nav">
 
-                            <!-- main navigation -->
-                            <ul class="main-navigation">
+                        <!-- navigation search -->
+                        <div class="nav-search">
+                            <form method="post" action="#">
+                                <fieldset>
+                                    <span class="icon-search"></span>
+                                    <input type="text" value="Type term and hit enter..." onfocus="if(this.value=='Type term and hit enter...'){this.value=''}" onblur="if(this.value==''){this.value='Type term and hit enter...'}" />
+                                </fieldset>
+                            </form>
+                        </div>
+                        <!-- .navigation search -->
 
-                                <li><a href="pradzia">@lang('labels.pradzia')</a> 
-								</li>
+                        <!-- main navigation -->
+                        <ul class="main-navigation">
+
+                            <li><a href="pradzia">@lang('labels.pradzia')</a> 
+                            </li>
 								<!-- 
 								<li><a href="apiemus">@lang('labels.apiemus')</a> 
 								</li> 
-								-->
-								<li><a href="automobiliai">@lang('labels.automobiliai')</a> 
-								</li>
-								<li><a href="kontaktai">@lang('labels.kontaktai')</a> 
-								</li>
-                            </ul>
-                            <!-- .main navigation -->
+                            -->
+                            <li><a href="automobiliai">@lang('labels.automobiliai')</a> 
+                            </li>
+                            <li><a href="kontaktai">@lang('labels.kontaktai')</a> 
+                            </li>
+                        </ul>
+                        <!-- .main navigation -->
 
-                        </div>
-                        <!-- .navigation wrap -->
+                    </div>
+                    <!-- .navigation wrap -->
 
-                    </nav>
-                    <!-- .navigation -->
+                </nav>
+                <!-- .navigation -->
 
-                </div>
             </div>
         </div>
-        <!-- .navigation and logo -->
+    </div>
+    <!-- .navigation and logo -->
 
-    </header>
-    <!-- ================================================== END HEADER ================================================== -->
-	
+</header>
+<!-- ================================================== END HEADER ================================================== -->
