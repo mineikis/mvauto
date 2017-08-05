@@ -13,23 +13,32 @@
 
 use App\Spalva;
 
-Route::get('/', function () {
-	$spalva = Spalva::first();
-    return view('pradzia', compact('spalva'));
-});
+Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+{
+	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+	Route::get('', function()
+	{
+		return View::make('pradzia');
+	});
+	
+	
+	Route::get('pradzia', function()
+	{
+		return View::make('pradzia');
+	});
 
-Route::get('/apiemus', function () {
-    return view('apiemus');
-});
-
-Route::get('/kontaktai', function () {
-    return view('kontaktai');
-});
-
-Route::get('/automobiliai', function () {
-    return view('automobiliai');
-});
-
-Route::get('/automobilis', function () {
-    return view('automobilis');
+	
+	Route::get('apiemus',function(){
+		return View::make('apiemus');
+	});
+	
+	
+	Route::get('automobiliai',function(){
+		return View::make('automobiliai');
+	});
+	
+	
+	Route::get('kontaktai',function(){
+		return View::make('kontaktai');
+	});
 });

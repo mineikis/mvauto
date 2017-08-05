@@ -79,7 +79,7 @@
                 <div class="row">
                     <div class="six columns">
                         <div class="copyrights">
-                            <p>&copy; MVauto 2004m</p>
+                            <p>&copy; MVAuto 2004m</p>
                         </div>
                     </div>
                     <div class="six columns">

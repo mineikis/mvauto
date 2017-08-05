@@ -7,7 +7,7 @@
             <div class="banner">
                 <ul>
                     <li data-transition="fade" data-slotamount="1">
-                        <img src="images/slide1.png" alt="" title="" />
+                        <img src="{{ URL::asset('images/1/1.jpg') }}" alt="" title="" />
                         <!-- caption -->
                         <div class="slide-caption caption lft" data-y="300" data-speed="700" data-start="400" data-easing="easeOutBack"></div>
                         <!-- .caption -->
@@ -22,7 +22,7 @@
                         <!-- tags -->
                         <div class="caption-tags caption" data-y="400" data-speed="700" data-start="1800" data-easing="easeOutBack">
                             <ul class="tag clearfix">
-                                <li>{{ $spalva->pavadinimas_lt }}</li>
+                                <li>2013</li>
                                 <li>140hp</li>
                                 <li>diesel</li>
                                 <li>manual</li>
@@ -39,7 +39,7 @@
 
                     </li>
                     <li data-transition="fade" data-slotamount="1">
-                        <img src="images/slide2.png" alt="" title="" />
+                        <img src="{{ URL::asset('images/1/2.jpg') }}" alt="" title="" />
 
                         <!-- caption -->
                         <div class="slide-caption caption lft" data-y="300" data-speed="700" data-start="400" data-easing="easeOutBack"></div>

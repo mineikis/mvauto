@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'lt',
 
     /*
     |--------------------------------------------------------------------------
@@ -90,7 +90,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'lt',
 
     /*
     |--------------------------------------------------------------------------
@@ -134,7 +134,7 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
-
+	
     'providers' => [
 
         /*
@@ -162,6 +162,12 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+		
+		
+        /*
+         * Localization provider
+         */
+		Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -225,6 +231,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+		
+		'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
 
     ],
 

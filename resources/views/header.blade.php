@@ -8,46 +8,26 @@
         <div class="top-bar">
             <div class="container">
                 <div class="row">
-
-                    <!-- notification -->
+                    <!-- notification
                     <div class="notification">
                         <p>This is simple notification message and you can insert <a href="#">anchor</a> inside too.</p>
                     </div>
-                    <!-- .notification -->
-
-                    <!-- call us -->
-                    <div class="call-us">
-                        <p>
-                            <span class="icon-phone"></span>080.444.333.233</p>
-                    </div>
+                    .notification -->
                     <!-- .call us -->
 
-                    <!-- social -->
+                    <!-- language -->
                     <div class="social">
-                        <ul class="clearfix">
-                            <li>
-                                <a href="#" class="tip-below success" data-tip="google plus">
-                                    <span class="icon-google-plus"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="tip-below success" data-tip="facebook">
-                                    <span class="icon-facebook"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="tip-below success" data-tip="twitter">
-                                    <span class="icon-twitter"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="tip-below success" data-tip="vimeo">
-                                    <span class="icon-vimeo"></span>
-                                </a>
-                            </li>
-                        </ul>
+						<ul class="clearfix">
+						@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+							<li>
+								<a rel="alternate" class="tip-below success" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+								{{ $properties['abbr'] }}
+								</a>
+							</li>
+						@endforeach
+					</ul>
                     </div>
-                    <!-- social -->
+                    <!-- language -->
 
                 </div>
             </div>
@@ -62,7 +42,7 @@
                     <!-- logo -->
                     <div class="logo">
                         <a href="/">
-                            <img src="images/logo.png" title="MVauto" alt="MVauto" />
+                            <img src="{{ URL::asset('images/logo.png') }}" title="MVAuto" alt="MVAuto" />
                         </a>
                     </div>
                     <!-- .logo -->
@@ -87,13 +67,15 @@
                             <!-- main navigation -->
                             <ul class="main-navigation">
 
-                                <li><a href="/">Pradžia</a> 
+                                <li><a href="pradzia">@lang('labels.pradzia')</a> 
 								</li>
-								<li><a href="apiemus">Apie Mus</a> 
+								<!-- 
+								<li><a href="apiemus">@lang('labels.apiemus')</a> 
+								</li> 
+								-->
+								<li><a href="automobiliai">@lang('labels.automobiliai')</a> 
 								</li>
-								<li><a href="automobiliai">Automobiliai</a> 
-								</li>
-								<li><a href="kontaktai">Kontaktai</a> 
+								<li><a href="kontaktai">@lang('labels.kontaktai')</a> 
 								</li>
                             </ul>
                             <!-- .main navigation -->

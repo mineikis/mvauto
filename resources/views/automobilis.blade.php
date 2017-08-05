@@ -54,7 +54,7 @@
                                                 <option value="acura">Acura</option>
                                                 <option value="alfa_romeo">Alfa Romeo</option>
                                                 <option value="aston_martin">
-                                                    <span>Aston Martin</span>
+                                                <span>Aston Martin</span>
                                                 </option>
                                                 <option value="audi">Audi</option>
                                                 <option value="bentley">Bentley</option>
