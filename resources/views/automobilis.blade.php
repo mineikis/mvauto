@@ -1,438 +1,13 @@
+ <?php use carbon\carbon;?>
+
 @extends('layouts.master')
 
 @section('content')
 
 
-    <!-- ================================================== BREADCRUMBS ================================================== -->
-    <section>
-
-        <div class="breadcrumbs">
-
-            <div class="container">
-                <div class="row">
-
-                    <div class="breadcrumbs-content clearfix">
-
-                        <div class="page-title">
-                            <h4>Car Listing</h4>
-                            <a href="#">
-                                <span class="icon-home"></span>
-                            </a>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-
-        </div>
-
-
-    </section>
-    <!-- ================================================== END BREADCRUMBS ============================================== -->
-
-    <!-- ================================================== MAIN SEARCH ================================================== -->
-    <section>
-
-        <div class="main-search">
-            <div class="container">
-                <div class="row">
-
-                    <!-- quick search -->
-                    <form method="" action="">
-                        <fieldset>
-
-                            <!-- quick search fields -->
-                            <div class="quick-search-fields" data-appear-animation="slideInLeft">
-                                <div class="ten columns clearfix">
-
-                                    <!-- select input -->
-                                    <div class="two columns">
-                                        <div class="select-input">
-                                            <select>
-                                                <option value="" selected="selected">Any Make</option>
-                                                <option value="acura">Acura</option>
-                                                <option value="alfa_romeo">Alfa Romeo</option>
-                                                <option value="aston_martin">
-                                                <span>Aston Martin</span>
-                                                </option>
-                                                <option value="audi">Audi</option>
-                                                <option value="bentley">Bentley</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <!-- .select input -->
-
-                                    <!-- select input -->
-                                    <div class="two columns">
-                                        <div class="select-input">
-                                            <select>
-                                                <option value="" selected="selected">Any Model</option>
-                                                <option value="acura">155</option>
-                                                <option value="alfa_romeo">156S</option>
-                                                <option value="aston_martin">156 JTD</option>
-                                                <option value="audi">Brera</option>
-                                                <option value="bentley">159 JTD</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <!-- .select input -->
-
-                                    <!-- select input -->
-                                    <div class="two columns">
-                                        <div class="select-input">
-                                            <select>
-                                                <option value="" selected="selected">Any Price</option>
-                                                <option value="acura">$0 - $10.000</option>
-                                                <option value="alfa_romeo">$10.000 - $20.000</option>
-                                                <option value="aston_martin">$20.000 - $40.000</option>
-                                                <option value="audi">$40.000 - $50.000</option>
-                                                <option value="audi">$50.000 +</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <!-- .select input -->
-
-                                    <!-- select input -->
-                                    <div class="two columns">
-                                        <div class="select-input">
-                                            <select>
-                                                <option value="" selected="selected">Any Mileage</option>
-                                                <option value="acura">0mi - 5.000mi</option>
-                                                <option value="alfa_romeo">5.000mi - 10.000mi</option>
-                                                <option value="aston_martin">10.000min - 50.000mi</option>
-                                                <option value="audi">50.000mi - 100.000mi</option>
-                                                <option value="audi">100.000mi - 150.000mi</option>
-                                                <option value="audi">150.000mi +</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <!-- .select input -->
-
-                                    <!-- select input -->
-                                    <div class="two columns">
-                                        <div class="select-input">
-                                            <select>
-                                                <option value="" selected="selected">Any Condition</option>
-                                                <option value="acura">New</option>
-                                                <option value="acura">Used</option>
-                                                <option value="alfa_romeo">Perfect</option>
-                                                <option value="aston_martin">Good</option>
-                                                <option value="audi">Damaged</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <!-- .select input -->
-
-                                    <!-- select input -->
-                                    <div class="two columns">
-                                        <div class="select-input">
-                                            <select>
-                                                <option value="" selected="selected">Any Year</option>
-                                                <option value="alfa_romeo">2010</option>
-                                                <option value="aston_martin">2011</option>
-                                                <option value="audi">2012</option>
-                                                <option value="bentley">2013</option>
-                                                <option value="bentley">2014</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <!-- .select input -->
-
-                                </div>
-                            </div>
-                            <!-- .quick search fileds -->
-
-                            <!-- advanced search fields -->
-                            <div class="advanced-search-fields" data-appear-animation="slideInLeft">
-                                <div class="ten columns clearfix">
-
-                                    <div class="row">
-
-                                        <!-- select input -->
-                                        <div class="two columns">
-                                            <div class="select-input">
-                                                <select>
-                                                    <option value="" selected="selected">Any Make</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- .select input -->
-
-                                        <!-- select input -->
-                                        <div class="two columns">
-                                            <div class="select-input">
-                                                <select>
-                                                    <option value="" selected="selected">Any Make</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- .select input -->
-
-                                        <!-- select input -->
-                                        <div class="two columns">
-                                            <div class="select-input">
-                                                <select>
-                                                    <option value="" selected="selected">Any Make</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- .select input -->
-
-                                        <!-- select input -->
-                                        <div class="two columns">
-                                            <div class="select-input">
-                                                <select>
-                                                    <option value="" selected="selected">Any Make</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- .select input -->
-
-                                        <!-- select input -->
-                                        <div class="two columns">
-                                            <div class="select-input">
-                                                <select>
-                                                    <option value="" selected="selected">Any Make</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- .select input -->
-
-                                        <!-- select input -->
-                                        <div class="two columns">
-                                            <div class="select-input">
-                                                <select>
-                                                    <option value="" selected="selected">Any Make</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- .select input -->
-
-                                    </div>
-
-                                    <div class="row">
-
-                                        <!-- select input -->
-                                        <div class="two columns">
-                                            <div class="select-input">
-                                                <select>
-                                                    <option value="" selected="selected">Any Make</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- .select input -->
-
-                                        <!-- select input -->
-                                        <div class="two columns">
-                                            <div class="select-input">
-                                                <select>
-                                                    <option value="" selected="selected">Any Make</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                    <option value="any">Any</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- .select input -->
-
-                                        <!-- select input -->
-                                        <div class="two columns">
-                                            <div class="select-input">
-                                                <select>
-                                                    <option value="" selected="selected">Any Make</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- .select input -->
-
-                                        <!-- select input -->
-                                        <div class="two columns">
-                                            <div class="select-input">
-                                                <select>
-                                                    <option value="" selected="selected">Any Make</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- .select input -->
-
-                                        <!-- select input -->
-                                        <div class="two columns">
-                                            <div class="select-input">
-                                                <select>
-                                                    <option value="" selected="selected">Any Make</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- .select input -->
-
-                                        <!-- select input -->
-                                        <div class="two columns">
-                                            <div class="select-input">
-                                                <select>
-                                                    <option value="" selected="selected">Any Make</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                    <option value="acura">Acura</option>
-                                                    <option value="alfa_romeo">Alfa Romeo</option>
-                                                    <option value="aston_martin">Aston Martin</option>
-                                                    <option value="audi">Audi</option>
-                                                    <option value="bentley">Bentley</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- .select input -->
-
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- .advanced search fields -->
-
-                            <!-- search buttons -->
-                            <div class="two columns">
-
-                                <!-- search -->
-                                <div class="search-left" data-appear-animation="slideInRight">
-                                    <button type="submit">
-                                        <span class="icon-search"></span>SEARCH CAR</button>
-                                </div>
-                                <!-- search -->
-
-                                <!-- advanced search -->
-                                <div class="search-right" data-appear-animation="slideInRight">
-                                    <button type="button">
-                                        <span class="icon-plus"></span>
-                                    </button>
-                                </div>
-                                <!-- advanced search -->
-
-                            </div>
-                            <!-- search buttons -->
-
-
-                        </fieldset>
-                    </form>
-                    <!-- .Quick Search -->
-
-
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <!-- ================================================== END MAIN SEARCH ================================================== -->
+  @section('search')
+  @include('search')
+  @show
 
 
     <!-- ================================================== CAR SINGLE ================================================== -->
@@ -449,7 +24,7 @@
                         <!-- date added -->
                         <div class="single-car-date-added">
                             <p>
-                                <span class="icon-calendar"></span>12.12.2014</p>
+                                <span class="icon-calendar"></span>{{ Carbon::now() }}</p>
                         </div>
                         <!-- date added -->
 
@@ -487,13 +62,13 @@
 
                                     <li data-transition="fade" data-slotamount="1">
 
-                                        <img src="images/slide1.png" alt="" title="" />
+                                        <img src="{{ URL::asset('images/1/1.jpg') }}" alt="" title="" />
 
                                     </li>
 
                                     <li data-transition="fade" data-slotamount="1">
 
-                                        <img src="images/slide2.png" alt="" title="" />
+                                        <img src="{{ URL::asset('images/1/2.jpg') }}" alt="" title="" />
 
                                     </li>
 
@@ -516,7 +91,7 @@
 
                                     <!-- promo heading -->
                                     <div class="inline-promo-heading">
-                                        <p>ADDITIONAL INFO</p>
+                                        <p>@lang('labels.papildoma_info')</p>
                                     </div>
 
                                     <div class="inline-promo-content">
@@ -538,8 +113,8 @@
                                 <div class="horizontal-tab clearfix">
                                     <div class="h-tab">
                                         <ul class="resp-tabs-list clearfix">
-                                            <li>DETAILS</li>
-                                            <li>EQUIPMENT</li>
+                                            <li>@lang('labels.detales')</li>
+                                            <li>@lang('labels.iranga')</li>
                                         </ul>
 
                                         <div class="resp-tabs-container">
@@ -687,92 +262,8 @@
                     </div>
                     <!-- .car single info -->
 
-                    <!-- share -->
-                    <div class="twelve columns alpha space-top-and-bottom small" data-appear-animation="bounceIn">
-                        <div class="share">
-
-                            <ul>
-                                <li>Speread the word:</li>
-                                <li>
-                                    <a href="#">
-                                        <span class="icon-linkedin"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="icon-lastfm2"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="con-stumbleupon"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="icon-tumblr2"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="icon-steam2"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="icon-flattr"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="icon-pinterest2"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="icon-lastfm2"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="icon-flickr3"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="icon-vimeo2"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="icon-instagram"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="icon-facebook2"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="icon-google-plus2"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="icon-twitter2"></span>
-                                    </a>
-                                </li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <!-- .share -->
-
-
                 </div>
                 <!--. car single body -->
-
 
             </div>
         </div>
@@ -781,58 +272,6 @@
     <!-- ================================================== CAR SINGLE ============================================== -->
 
 
-    <!-- ================================================== BY OR RESERVE =========================================== -->
-    <section>
-
-        <div class="dark-promo space-bottom">
-            <div class="container">
-                <div class="row">
-
-                    <div class="promo">
-
-                        <div class="dark-form" data-appear-animation="bounceIn">
-                            <h3><b>Buy</b> or <b>Reserve</b>
-                            </h3>
-                            <h4>If you are interested to dark or reserve this car you can send us request anytime</h4>
-                            <form>
-                                <fieldset>
-                                    <div class="three columns alpha">
-                                        <div class="input">
-                                            <input type="text" placeholder="Name" />
-                                        </div>
-                                    </div>
-
-                                    <div class="three columns">
-                                        <div class="input">
-                                            <input type="text" placeholder="Email" />
-                                        </div>
-                                    </div>
-
-                                    <div class="three columns">
-                                        <div class="input">
-                                            <input type="text" placeholder="Phone number" />
-                                        </div>
-                                    </div>
-
-                                    <div class="three columns">
-                                        <div class="input-submit">
-                                            <input type="submit" value="SEND REQUEST" />
-                                        </div>
-                                    </div>
-
-                                </fieldset>
-                            </form>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- ================================================== dark OR RESERVE ============================================= -->
 
     <!-- ================================================== LATEST CARS ================================================== -->
 

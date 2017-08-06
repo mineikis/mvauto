@@ -27,6 +27,14 @@
                         <!-- text widget -->
                         <div class="three columns alpha">
                             <div class="widget" data-appear-animation="slideInLeft">
+
+                            </div>
+                        </div>
+                        <!-- .text widget -->
+
+                        <!-- text widget -->
+                        <div class="three columns alpha">
+                            <div class="widget" data-appear-animation="slideInLeft">
                                 <h4><b>@lang('labels.apie')</b> {{Config::get('constants.imones_pav')}}</h4>
                                 <p>@lang('tekstai.apie_mus_1')
                                     <br />

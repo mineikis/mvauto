@@ -36,6 +36,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 	Route::get('automobiliai',function(){
 		return View::make('automobiliai');
 	});
+
+	Route::get('automobilis',function(){
+		return View::make('automobilis');
+	});
+	
 	
 	
 	Route::get('kontaktai',function(){

@@ -5,21 +5,9 @@ jQuery( document ).ready( function ( $ )
     var myMarkers = {
         "markers": [
             {
-                "latitude": "29.467698827122206",
-                "longitude": "-98.56624603271484",
-                "icon": "images/marker.png",
-                "baloon_text": ''
-  },
-            {
-                "latitude": "29.482941998140777",
-                "longitude": "-98.46256256103516",
-                "icon": "images/marker.png",
-                "baloon_text": ''
-  },
-            {
-                "latitude": "29.413881086954767",
-                "longitude": "-98.5202407836914",
-                "icon": "images/marker.png",
+                "latitude": "55.266106",
+                "longitude": "22.310318",
+                "icon": "images/marker1.png",
                 "baloon_text": ''
   } ]
     };
@@ -27,8 +15,8 @@ jQuery( document ).ready( function ( $ )
     //set up map options
     $( ".map" ).mapmarker(
     {
-        zoom: 12,
-        center: 'Alta Vista, San Antonio, USA',
+        zoom: 16,
+        center: 'IKSFERA car sales lot, Taurage',
         markers: myMarkers
     } );
 

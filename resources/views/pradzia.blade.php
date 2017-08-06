@@ -84,10 +84,10 @@
             <div class="container">
                 <div class="row">
                     <div class="promo">
-                        <h1 data-appear-animation="slideInLeft"><b>Welcome to the best car dealership HTML Template</b> 
+                        <h1 data-appear-animation="slideInLeft"><b>@lang('labels.sveiki_atvyke')</b> 
                         </h1>
-                        <p data-appear-animation="slideInRight">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem ap
-                            <br />eriam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        <p data-appear-animation="slideInRight">@lang('tekstai.sveiki_atvyke_1')
+                            <br />@lang('tekstai.sveiki_atvyke_2')</p>
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@
             <div class="container">
                 <div class="row">
                     <div class="heading space-top-and-bottom small">
-                        <h2>Latest <b>Cars</b> 
+                        <h2>@lang('labels.naujausi') <b>@lang('labels.skelbimai')</b> 
                         </h2>
                         <span></span>
                     </div>
@@ -440,7 +440,7 @@
 
                     <!-- button -->
                     <div class="row">
-                        <div class="button-wrap"> <a href="#" class="big button light" data-appear-animation="flipInX">Check our complete offer</a> 
+                        <div class="button-wrap"> <a href="automobiliai" class="big button light" data-appear-animation="flipInX">@lang('labels.visi_skelbimai')</a>
                         </div>
                     </div>
                     <!-- .button -->
