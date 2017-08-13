@@ -6,20 +6,18 @@
     <section>
 
         <div class="bannercontainer">
-            @foreach ($nuotraukosTitulinio as $nuotrauka)
-                 <p>This is file {{ $nuotrauka }}</p>
-            @endforeach
             <div class="banner">
                 <ul>
+                @foreach ($nuotraukosTitulinio as $nuotrauka)
                     <li data-transition="fade" data-slotamount="1">
-                        <img src="{{ URL::asset('images/1/1.jpg') }}" alt="" title="" />
+                        <img src="{{ URL::asset('images/'.$brangiausiasAuto->id.'/'.$nuotrauka) }}" alt="" title="" />
                         <!-- caption -->
                         <div class="slide-caption caption lft" data-y="300" data-speed="700" data-start="400" data-easing="easeOutBack"></div>
                         <!-- .caption -->
 
                         <!-- title -->
                         <div class="caption-title caption" data-y="320" data-speed="700" data-start="1200" data-easing="easeOutBack">
-                            <h2>SUPERB CONDITION <b>{{$brangiausiasAuto->variklis}}</b> 
+                            <h2>{{$brangiausiasAuto->marke->pavadinimas}} <b>{{$brangiausiasAuto->marke->modelis->pavadinimas}}</b> 
                             </h2>
                         </div>
                         <!-- title -->
@@ -27,13 +25,13 @@
                         <!-- tags -->
                         <div class="caption-tags caption" data-y="400" data-speed="700" data-start="1800" data-easing="easeOutBack">
                             <ul class="tag clearfix">
-                                <li>2013</li>
-                                <li>140hp</li>
-                                <li>diesel</li>
-                                <li>manual</li>
+                                <li>{{ Carbon\Carbon::parse($brangiausiasAuto->pirmos_reg_data)->year}}</li>
+                                <li>{{$brangiausiasAuto->variklis}}</li>
+                                <li>{{$isLocaleLt ? $brangiausiasAuto->kuro_tipas->pavadinimas_lt : $brangiausiasAuto->kuro_tipas->pavadinimas_ru}}</li>
+                                <li>{{$isLocaleLt ? $brangiausiasAuto->pavaru_deze->pavadinimas_lt : $brangiausiasAuto->pavaru_deze->pavadinimas_ru}}</li>
                                 <li class="tag-price">
-                                    <a href="#" class="clearfix">
-                                        <span class="price"><b>$16.450</b> 
+                                    <a href="automobilis/{{$brangiausiasAuto->id}}" class="clearfix">
+                                        <span class="price"><b>{{$brangiausiasAuto->kaina}} €</b> 
                                         </span>
                                         <span class="icon-arrow-right2"></span>
                                     </a>
@@ -43,21 +41,17 @@
                         <!-- .tags -->
 
                     </li>
-                    <li data-transition="fade" data-slotamount="1">
+                    @endforeach
+                   <!-- <li data-transition="fade" data-slotamount="1">
                         <img src="{{ URL::asset('images/1/2.jpg') }}" alt="" title="" />
 
-                        <!-- caption -->
                         <div class="slide-caption caption lft" data-y="300" data-speed="700" data-start="400" data-easing="easeOutBack"></div>
-                        <!-- .caption -->
 
-                        <!-- title -->
                         <div class="caption-title caption" data-y="320" data-speed="700" data-start="1200" data-easing="easeOutBack">
                             <h2>SUPERB CONDITION <b>MERCEDES BENZ SLK</b> 
                             </h2>
                         </div>
-                        <!-- title -->
-
-                        <!-- tags -->
+                        
                         <div class="caption-tags caption" data-y="400" data-speed="700" data-start="1800" data-easing="easeOutBack">
                             <ul class="tag clearfix">
                                 <li>2013</li>
@@ -73,9 +67,8 @@
                                 </li>
                             </ul>
                         </div>
-                        <!-- .tags -->
-
-                    </li>
+        
+                    </li> -->
                 </ul>
                 <div class="tp-bannertimer tp-bottom"></div>
             </div>

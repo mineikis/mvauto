@@ -7,27 +7,17 @@ use Storage;
 use File;
 use App\Automobilis;
 use View;
+use LaravelLocalization;
 
 
 class PradziaController extends Controller
 {
 	public function index(){
-		$brangiausiasAuto = self::brangiausiasAutomobilis();
+		$isLocaleLt = self::isLocaleLt();
+		$brangiausiasAuto = Automobilis::brangiausias();
 		$nuotraukosTitulinio = self::nuotraukos($brangiausiasAuto->id);
 
-		return View::make('pradzia', compact('brangiausiasAuto', 'nuotraukosTitulinio'));
-	}
-
-	public function brangiausiasAutomobilis(){
-		$auto = array();
-		$automobiliai = Automobilis::visiAktyvus();
-		//foreach ($skelbimai as $skelbimas) {
-		//	$auto[] = $skelbimas->automobilis;
-		//}
-		$sorted = array_sort($automobiliai, 'kaina');
-		$brang = array_last($sorted);
-
-		return $brang;
+		return View::make('pradzia', compact('brangiausiasAuto', 'nuotraukosTitulinio', 'isLocaleLt'));
 	}
 
 	public function nuotraukos($id){
@@ -38,4 +28,13 @@ class PradziaController extends Controller
 
 		return $nuotraukos;
 	}
+
+	public function isLocaleLt(){
+		if(LaravelLocalization::getCurrentLocale() == 'lt'){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }

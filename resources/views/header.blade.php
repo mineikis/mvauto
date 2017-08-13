@@ -67,7 +67,7 @@
                         <!-- main navigation -->
                         <ul class="main-navigation">
 
-                            <li><a href="pradzia">@lang('labels.pradzia')</a> 
+                            <li><a href="/pradzia">@lang('labels.pradzia')</a> 
                             </li>
 								<!-- 
 								<li><a href="apiemus">@lang('labels.apiemus')</a> 

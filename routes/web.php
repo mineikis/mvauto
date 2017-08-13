@@ -17,13 +17,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 	Route::get('', 'PradziaController@index');
-	
-	
-	Route::get('pradzia', function()
-	{
-		return View::make('pradzia');
-	});
-
+	Route::get('pradzia', 'PradziaController@index');
+	Route::get('automobilis/{id}', 'AutomobilisController@index');
 	
 	Route::get('apiemus',function(){
 		return View::make('apiemus');
@@ -33,12 +28,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 	Route::get('automobiliai',function(){
 		return View::make('automobiliai');
 	});
-
-	Route::get('automobilis',function(){
-		return View::make('automobilis');
-	});
-	
-	
 	
 	Route::get('kontaktai',function(){
 		return View::make('kontaktai');
