@@ -13,7 +13,8 @@
 
 use App\Spalva;
 
-Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+Route::group(['prefix' => LaravelLocalization::setLocale(),
+			  'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function()
 {
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 	Route::get('', 'PradziaController@index');
@@ -23,7 +24,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 	Route::get('apiemus',function(){
 		return View::make('apiemus');
 	});
-	
 	
 	Route::get('automobiliai',function(){
 		return View::make('automobiliai');
