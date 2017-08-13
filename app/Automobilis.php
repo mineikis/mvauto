@@ -10,8 +10,8 @@ class Automobilis extends Model
 	public static function brangiausias(){
     	return $this->orderBy('kaina', 'desc')->get()->first();
     }
-    public function skelbimai(){
-    	return $this->hasMany(Skelbimas::class);
+
+    public static function visiAktyvus(){
+    	return Automobilis::where('aktyvus', '1')->get();
     }
-    
 }

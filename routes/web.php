@@ -16,7 +16,7 @@ use App\Spalva;
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-	Route::get('', 'SkelbimasController@index');
+	Route::get('', 'PradziaController@index');
 	
 	
 	Route::get('pradzia', function()

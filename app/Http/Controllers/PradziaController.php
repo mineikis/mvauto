@@ -5,27 +5,26 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Storage;
 use File;
-use App\Skelbimas;
 use App\Automobilis;
 use View;
 
 
-class SkelbimasController extends Controller
+class PradziaController extends Controller
 {
 	public function index(){
 		$brangiausiasAuto = self::brangiausiasAutomobilis();
-		$nuotraukosTitulinio = self::nuotraukos($brangiausiasAuto->skelbimai->first()->id);
+		$nuotraukosTitulinio = self::nuotraukos($brangiausiasAuto->id);
 
 		return View::make('pradzia', compact('brangiausiasAuto', 'nuotraukosTitulinio'));
 	}
 
 	public function brangiausiasAutomobilis(){
 		$auto = array();
-		$skelbimai = Skelbimas::visiAktyvus();
-		foreach ($skelbimai as $skelbimas) {
-			$auto[] = $skelbimas->automobilis;
-		}
-		$sorted = array_sort($auto, 'kaina');
+		$automobiliai = Automobilis::visiAktyvus();
+		//foreach ($skelbimai as $skelbimas) {
+		//	$auto[] = $skelbimas->automobilis;
+		//}
+		$sorted = array_sort($automobiliai, 'kaina');
 		$brang = array_last($sorted);
 
 		return $brang;
