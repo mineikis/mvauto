@@ -1,9 +1,14 @@
 @extends('layouts.master')
 
 @section('content')
+
     <!-- ================================================== SLIDER ================================================== -->
     <section>
+
         <div class="bannercontainer">
+            @foreach ($nuotraukosTitulinio as $nuotrauka)
+                 <p>This is file {{ $nuotrauka }}</p>
+            @endforeach
             <div class="banner">
                 <ul>
                     <li data-transition="fade" data-slotamount="1">
@@ -14,7 +19,7 @@
 
                         <!-- title -->
                         <div class="caption-title caption" data-y="320" data-speed="700" data-start="1200" data-easing="easeOutBack">
-                            <h2>SUPERB CONDITION <b>MERCEDES BENZ SLK</b> 
+                            <h2>SUPERB CONDITION <b>{{$brangiausiasAuto->variklis}}</b> 
                             </h2>
                         </div>
                         <!-- title -->
