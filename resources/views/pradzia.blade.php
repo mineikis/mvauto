@@ -17,7 +17,7 @@
 
                     <!-- title -->
                     <div class="caption-title caption" data-y="320" data-speed="700" data-start="1200" data-easing="easeOutBack">
-                        <h2>{{$brangiausiasAuto->marke->pavadinimas}} <b>{{$brangiausiasAuto->marke->modelis->pavadinimas}} "{{$brangiausiasAuto->marke->modelis->kita}}"</b> 
+                        <h2>{{$brangiausiasAuto->modelis->marke->pavadinimas}} <b>{{$brangiausiasAuto->modelis->pavadinimas}} "{{$brangiausiasAuto->modelis->kita}}"</b> 
                         </h2>
                     </div>
                     <!-- title -->
@@ -100,7 +100,7 @@
 
                                     <!-- title -->
                                     <div class="car-title">
-                                        <h3><a href="automobilis/{{$auto->id}}">{{$auto->marke->pavadinimas}} {{$auto->marke->modelis->pavadinimas}}</a> 
+                                        <h3><a href="automobilis/{{$auto->id}}">{{$auto->modelis->marke->pavadinimas}} {{$auto->modelis->pavadinimas}}</a> 
                                         </h3>
                                     </div>
                                     <!-- .title -->
@@ -160,7 +160,7 @@
 
                                     <!-- title -->
                                     <div class="car-title">
-                                        <h3><a href="automobilis/{{$auto->id}}">{{$auto->marke->pavadinimas}} {{$auto->marke->modelis->pavadinimas}}"</a> 
+                                        <h3><a href="automobilis/{{$auto->id}}">{{$auto->modelis->marke->pavadinimas}} {{$auto->modelis->pavadinimas}}"</a>
                                         </h3>
                                     </div>
                                     <!-- .title -->

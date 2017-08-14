@@ -14,8 +14,8 @@ class Automobilis extends Model
 		return Automobilis::where('aktyvus', '1')->get();
 	}
 
-	public function marke(){
-		return $this->belongsTo('App\Marke');
+	public function modelis(){
+		return $this->belongsTo('App\Modelis');
 	}
 
 	public function pavaru_deze(){
