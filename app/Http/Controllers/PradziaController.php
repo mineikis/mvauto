@@ -15,9 +15,10 @@ class PradziaController extends Controller
 	public function index(){
 		$isLocaleLt = self::isLocaleLt();
 		$brangiausiasAuto = Automobilis::brangiausias();
+		$naujausi = Automobilis::latest_cars();
 		$nuotraukosTitulinio = self::nuotraukos($brangiausiasAuto->id);
 
-		return View::make('pradzia', compact('brangiausiasAuto', 'nuotraukosTitulinio', 'isLocaleLt'));
+		return View::make('pradzia', compact('brangiausiasAuto', 'nuotraukosTitulinio', 'isLocaleLt', 'naujausi'));
 	}
 
 	public function nuotraukos($id){
@@ -36,5 +37,4 @@ class PradziaController extends Controller
 			return false;
 		}
 	}
-
 }

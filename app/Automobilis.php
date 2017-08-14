@@ -25,4 +25,8 @@ class Automobilis extends Model
 	public function kuro_tipas(){
 		return $this->belongsTo('App\KuroTipas');
 	}
+
+	public static function latest_cars(){
+		return Automobilis::orderBy('patalpinimo_data', 'desc')->take(6)->get();
+	}
 }
