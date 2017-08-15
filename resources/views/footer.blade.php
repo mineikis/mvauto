@@ -52,11 +52,9 @@
                                 <div class="light-select-input">
                                     <select>
                                         <option selected>@lang('labels.pagal_marke')</option>
-                                        <option>Alpha Romeo</option>
-                                        <option>Austin</option>
-                                        <option>BMW</option>
-                                        <option>Honda</option>
-                                        <option>Toyota</option>
+                                        @foreach($aktyviosMarkes as $marke)
+                                        <option>{{$marke}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="light-select-input">

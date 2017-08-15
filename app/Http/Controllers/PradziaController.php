@@ -17,8 +17,9 @@ class PradziaController extends Controller
 		$brangiausiasAuto = Automobilis::brangiausias();
 		$naujausi = Automobilis::latest_cars();
 		$nuotraukosTitulinio = self::nuotraukos($brangiausiasAuto->id);
+		$aktyviosMarkes = self::aktyviosMarkes();
 
-		return View::make('pradzia', compact('brangiausiasAuto', 'nuotraukosTitulinio', 'isLocaleLt', 'naujausi'));
+		return View::make('pradzia', compact('brangiausiasAuto', 'nuotraukosTitulinio', 'isLocaleLt', 'naujausi', 'aktyviosMarkes'));
 	}
 
 	public function nuotraukos($id){
@@ -36,5 +37,14 @@ class PradziaController extends Controller
 		} else {
 			return false;
 		}
+	}
+
+	public function aktyviosMarkes(){
+		$markes = array();
+		$aktyvus = Automobilis::visiAktyvus();
+		foreach ($aktyvus as $auto) {
+			$markes[] = $auto->modelis->marke->pavadinimas;
+		}
+		return array_unique($markes);
 	}
 }

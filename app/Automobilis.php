@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Automobilis extends Model
 {
 	public static function brangiausias(){
-		return Automobilis::orderBy('kaina', 'desc')->get()->first();
+		return Automobilis::where('aktyvus', '1')->orderBy('kaina', 'desc')->get()->first();
 	}
 
 	public static function visiAktyvus(){
@@ -27,6 +27,6 @@ class Automobilis extends Model
 	}
 
 	public static function latest_cars(){
-		return Automobilis::orderBy('patalpinimo_data', 'desc')->take(6)->get();
+		return Automobilis::where('aktyvus', '1')->orderBy('patalpinimo_data', 'desc')->take(6)->get();
 	}
 }
