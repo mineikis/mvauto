@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Storage;
+use Lang;
 use File;
 use App\Automobilis;
 use View;
@@ -18,6 +19,8 @@ class PradziaController extends Controller
 		$naujausi = Automobilis::latest_cars();
 		$nuotraukosTitulinio = self::nuotraukos($brangiausiasAuto->id);
 		$aktyviosMarkes = self::aktyviosMarkes();
+
+		//dd($aktyviosMarkes);
 
 		return View::make('pradzia', compact('brangiausiasAuto', 'nuotraukosTitulinio', 'isLocaleLt', 'naujausi', 'aktyviosMarkes'));
 	}

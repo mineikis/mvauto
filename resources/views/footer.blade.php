@@ -8,7 +8,7 @@
                         <h4 data-appear-animation="flipInX">{{Config::get('constants.adresas')}}
                             <br />
                             <b>{{Config::get('constants.el_pastas')}}</b></h4>
-                            <div class="button-wrap"> <a href="#" class="button dark medium" data-appear-animation="flipInX">@lang('labels.susisiekite_su_mumis')</a> 
+                            <div class="button-wrap"> <a href="/kontaktai" class="button dark medium" data-appear-animation="flipInX">@lang('labels.susisiekite_su_mumis')</a> 
                             </div>
                         </div>
                     </div>
@@ -50,10 +50,10 @@
                                 <h4><b>@lang('labels.issirinkite') </b>@lang('labels.automobili')</h4>
                                 <p>@lang('tekstai.isirinkite_automobili')</p>
                                 <div class="light-select-input">
-                                    <select>
+                                    <select name="forma" onchange="location = this.value;">
                                         <option selected>@lang('labels.pagal_marke')</option>
-                                        @foreach($aktyviosMarkes as $marke)
-                                        <option>{{$marke}}</option>
+                                        @foreach((new \App\Helpers\FooterHelper)->aktyviosMarkes() as $marke)
+                                        <option value="\automobiliai\marke\{{$marke}}">{{$marke}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -91,21 +91,17 @@
                         <div class="six columns">
                             <div class="footer-navigation">
                                 <ul class="clearfix">
-                                   <li><a href="pradzia">@lang('labels.pradzia')</a> 
-                                   </li>
-                                   <li><a href="automobiliai">@lang('labels.automobiliai')</a> 
-                                   </li>
-                                   <li><a href="kontaktai">@lang('labels.kontaktai')</a> 
-                                   </li>
-                                    <!-- 
-                                    <li><a href="apiemus">@lang('labels.apiemus')</a> 
-                                    </li> 
-                            -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- ================================================== BOTTOM FOOTER ================================================== -->
+                                 <li><a href="pradzia">@lang('labels.pradzia')</a> 
+                                 </li>
+                                 <li><a href="automobiliai">@lang('labels.automobiliai')</a> 
+                                 </li>
+                                 <li><a href="kontaktai">@lang('labels.kontaktai')</a> 
+                                 </li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </footer>
+     <!-- ================================================== BOTTOM FOOTER ================================================== -->

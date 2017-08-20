@@ -20,14 +20,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 	Route::get('', 'PradziaController@index');
 	Route::get('pradzia', 'PradziaController@index');
 	Route::get('automobilis/{id}', 'AutomobilisController@index');
-	
-	Route::get('apiemus',function(){
-		return View::make('apiemus');
-	});
-	
-	Route::get('automobiliai',function(){
-		return View::make('automobiliai');
-	});
+	Route::get('automobiliai', 'AutomobiliaiController@index');
+	Route::get('automobiliai/marke/{pavadinimas}', 'AutomobiliaiController@marke');
 	
 	Route::get('kontaktai',function(){
 		return View::make('kontaktai');
