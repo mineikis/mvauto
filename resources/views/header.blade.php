@@ -53,29 +53,13 @@
                     <!-- navigation wrap -->
                     <div class="main-nav">
 
-                        <!-- navigation search -->
-                        <div class="nav-search">
-                            <form method="post" action="#">
-                                <fieldset>
-                                    <span class="icon-search"></span>
-                                    <input type="text" value="Type term and hit enter..." onfocus="if(this.value=='Type term and hit enter...'){this.value=''}" onblur="if(this.value==''){this.value='Type term and hit enter...'}" />
-                                </fieldset>
-                            </form>
-                        </div>
-                        <!-- .navigation search -->
-
                         <!-- main navigation -->
-                        <ul class="main-navigation">
-
-                            <li><a href="/pradzia">@lang('labels.pradzia')</a> 
+                        <ul class="main-navigation nav-1 inline">
+                            <li><a href="/" class="{{ Request::is(LaravelLocalization::getCurrentLocale()) ? 'active' : ''}}">@lang('labels.pradzia')</a> 
                             </li>
-								<!-- 
-								<li><a href="apiemus">@lang('labels.apiemus')</a> 
-								</li> 
-                            -->
-                            <li><a href="automobiliai">@lang('labels.automobiliai')</a> 
+                            <li><a href="automobiliai/1" class="{{ Request::is(LaravelLocalization::getCurrentLocale().'/automobiliai/1') ? 'active' : ''}}">@lang('labels.automobiliai')</a> 
                             </li>
-                            <li><a href="kontaktai">@lang('labels.kontaktai')</a> 
+                            <li><a href="kontaktai" class="{{ Request::is(LaravelLocalization::getCurrentLocale().'/kontaktai') ? 'active' : ''}}">@lang('labels.kontaktai')</a> 
                             </li>
                         </ul>
                         <!-- .main navigation -->

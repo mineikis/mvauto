@@ -26,7 +26,7 @@
                     <div class="caption-tags caption" data-y="400" data-speed="700" data-start="1800" data-easing="easeOutBack">
                         <ul class="tag clearfix">
                             <li>{{ Carbon\Carbon::parse($brangiausiasAuto->pirmos_reg_data)->year}}</li>
-                            <li>{{$brangiausiasAuto->variklis}}</li>
+                            <li>{{explode('(', $brangiausiasAuto->variklis)[0]}}</li>
                             <li>{{$isLocaleLt ? $brangiausiasAuto->kuro_tipas->pavadinimas_lt : $brangiausiasAuto->kuro_tipas->pavadinimas_ru}}</li>
                             <li>{{$isLocaleLt ? $brangiausiasAuto->pavaru_deze->pavadinimas_lt : $brangiausiasAuto->pavaru_deze->pavadinimas_ru}}</li>
                             <li class="tag-price">
@@ -77,9 +77,9 @@
                         </h2>
                         <span></span>
                     </div>
-
+                    @foreach ($naujausi->chunk(3) as $chunk)
                     <div class="row">
-                        @foreach ($naujausi->slice(0, 3) as $auto)
+                        @foreach($chunk as $auto)
                         <!-- car -->
                         <div class="four columns">
                             <div class="car-box vertical medium" data-appear-animation="slideInLeft">
@@ -108,11 +108,13 @@
                                     <!-- tags -->
                                     <div class="car-tags">
                                         <ul class="clearfix">
-                                            <li>2012</li>
-                                            <li>200hp</li>
-                                            <li>18.000mi</li>
-                                            <li>Bensin</li>
-                                            <li>Automatic</li>
+                                            <li>{{ Carbon\Carbon::parse($auto->pirmos_reg_data)->year}}</li>
+                                            <li>{{explode('(', $auto->variklis)[0]}}</li>
+                                            <li>{{$isLocaleLt ? $auto->kuro_tipas->pavadinimas_lt : $auto->kuro_tipas->pavadinimas_ru}}</li>
+                                            <li>{{$isLocaleLt ? $auto->pavaru_deze->pavadinimas_lt : $auto->pavaru_deze->pavadinimas_ru}}</li>
+                                            @if(!empty ($auto->rida))
+                                            <li>{{$auto->rida}}@lang('labels.km')</li>
+                                            @endif
                                         </ul>
                                     </div>
                                     <!-- .tags -->
@@ -120,7 +122,7 @@
                                     <!-- price -->
                                     <div class="car-price">
                                         <a href="automobilis/{{$auto->id}}" class="clearfix">
-                                            <span class="price">$12.350</span>
+                                            <span class="price">{{$auto->kaina}} €</span>
                                             <span class="icon-arrow-right2"></span>
                                         </a>
                                     </div>
@@ -132,73 +134,16 @@
                             </div>
                         </div>
                         <!-- .car -->
+                        
                         @endforeach
-
                     </div>
                     <!-- .1st -->
 
-                    <!-- 2nd -->
-                    <div class="row">
-                    @foreach ($naujausi->slice(3, 6) as $auto)
-                        <!-- car -->
-                        <div class="four columns">
-                            <div class="car-box vertical medium" data-appear-animation="slideInRight">
-
-                                <!-- image -->
-                                <div class="car-image">
-                                    <a href="automobilis/{{$auto->id}}">
-                                        <img src="{{ URL::asset('images/'.$auto->id.'/1.jpg') }}" title="car" alt="car" />
-                                        <span class="background">
-                                            <span class="icon-plus"></span>
-                                        </span>
-                                    </a>
-                                </div>
-                                <!-- .image -->
-
-                                <!-- content -->
-                                <div class="car-content">
-
-                                    <!-- title -->
-                                    <div class="car-title">
-                                        <h3><a href="automobilis/{{$auto->id}}">{{$auto->modelis->marke->pavadinimas}} {{$auto->modelis->pavadinimas}}"</a>
-                                        </h3>
-                                    </div>
-                                    <!-- .title -->
-
-                                    <!-- tags -->
-                                    <div class="car-tags">
-                                        <ul class="clearfix">
-                                            <li>2012</li>
-                                            <li>200hp</li>
-                                            <li>18.000mi</li>
-                                            <li>Bensin</li>
-                                            <li>Automatic</li>
-                                        </ul>
-                                    </div>
-                                    <!-- .tags -->
-
-                                    <!-- price -->
-                                    <div class="car-price">
-                                        <a href="automobilis/{{$auto->id}}" class="clearfix">
-                                            <span class="price">$12.350</span>
-                                            <span class="icon-arrow-right2"></span>
-                                        </a>
-                                    </div>
-                                    <!-- .price -->
-
-                                </div>
-                                <!-- .content -->
-
-                            </div>
-                        </div>
-                        <!-- .car -->
-                        @endforeach
-                    </div>
-                    <!-- .2nd -->
+                    @endforeach
 
                     <!-- button -->
                     <div class="row">
-                        <div class="button-wrap"> <a href="automobiliai" class="big button light" data-appear-animation="flipInX">@lang('labels.visi_skelbimai')</a>
+                        <div class="button-wrap"> <a href="automobiliai/1" class="big button light" data-appear-animation="flipInX">@lang('labels.visi_skelbimai')</a>
                         </div>
                     </div>
                     <!-- .button -->

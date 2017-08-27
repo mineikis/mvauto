@@ -2,6 +2,7 @@
 
 return [
 'title'		   => 'MVAuto - Naudotų automobilių prekyba',
+'km'		   => 'км',
 
 //master, header, footer
 'pradzia'      => 'Начало',

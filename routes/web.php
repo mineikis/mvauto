@@ -18,9 +18,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 {
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 	Route::get('', 'PradziaController@index');
-	Route::get('pradzia', 'PradziaController@index');
+	//Route::get('pradzia', 'PradziaController@index');
 	Route::get('automobilis/{id}', 'AutomobilisController@index');
-	Route::get('automobiliai', 'AutomobiliaiController@index');
+	Route::get('automobiliai/{puslapis}', 'AutomobiliaiController@index');
 	Route::get('automobiliai/marke/{pavadinimas}', 'AutomobiliaiController@marke');
 	
 	Route::get('kontaktai',function(){

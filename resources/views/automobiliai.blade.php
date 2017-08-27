@@ -58,18 +58,17 @@
             </div>
 
         </div>
-
-        <!-- .1 -->
+        @foreach ($automobiliai->chunk(3) as $chunk)
         <div class="row">
-            @foreach ($automobiliai->slice(0, 3) as $auto)
+            @foreach($chunk as $auto)
             <!-- car vertical medium -->
             <div class="four columns">
                 <div class="car-box vertical medium">
 
                     <!-- image -->
                     <div class="car-image">
-                        <a href="#">
-                            <img src="images/car-1.jpg" title="car" alt="car" />
+                    <a href="/automobilis/{{$auto->id}}">
+                            <img src="{{ URL::asset('images/'.$auto->id.'/1.jpg') }}" title="car" alt="car" />
                             <span class="background">
                                 <span class="icon-plus"></span>
                             </span>
@@ -90,19 +89,21 @@
                         <!-- tags -->
                         <div class="car-tags">
                             <ul class="clearfix">
-                                <li>2012</li>
-                                <li>200hp</li>
-                                <li>18.000mi</li>
-                                <li>Bensin</li>
-                                <li>Automatic</li>
+                                <li>{{ Carbon\Carbon::parse($auto->pirmos_reg_data)->year}}</li>
+                                <li>{{explode('(', $auto->variklis)[0]}}</li>
+                                <li>{{$isLocaleLt ? $auto->kuro_tipas->pavadinimas_lt : $auto->kuro_tipas->pavadinimas_ru}}</li>
+                                <li>{{$isLocaleLt ? $auto->pavaru_deze->pavadinimas_lt : $auto->pavaru_deze->pavadinimas_ru}}</li>
+                                @if(!empty ($auto->rida))
+                                <li>{{$auto->rida}}@lang('labels.km')</li>
+                                @endif
                             </ul>
                         </div>
                         <!-- .tags -->
 
                         <!-- price -->
                         <div class="car-price">
-                            <a href="#" class="clearfix">
-                                <span class="price">$12.350</span>
+                            <a href="/automobilis/{{$auto->id}}" class="clearfix">
+                                <span class="price">{{$auto->kaina}} €</span>
                                 <span class="icon-arrow-right2"></span>
                             </a>
                         </div>
@@ -115,369 +116,40 @@
             </div>
             <!-- .car vertical medium -->
             @endforeach
-
         </div>
         <!-- .1 -->
+        @endforeach
 
-        <!-- .2 -->
-        <div class="row">
+    </div>
+    <!-- .3 -->
 
-            <!-- car vertical medium -->
-            <div class="four columns">
-                <div class="car-box vertical medium">
-
-                    <!-- image -->
-                    <div class="car-image">
-                        <a href="#">
-                            <img src="images/car-4.jpg" title="car" alt="car" />
-                            <span class="background">
-                                <span class="icon-plus"></span>
-                            </span>
-                        </a>
-                    </div>
-                    <!-- .image -->
-
-                    <!-- content -->
-                    <div class="car-content">
-
-                        <!-- title -->
-                        <div class="car-title">
-                            <h3><a href="#">Great Honda CLR</a>
-                            </h3>
-                        </div>
-                        <!-- .title -->
-
-                        <!-- tags -->
-                        <div class="car-tags">
-                            <ul class="clearfix">
-                                <li>2012</li>
-                                <li>200hp</li>
-                                <li>18.000mi</li>
-                                <li>Bensin</li>
-                                <li>Automatic</li>
-                            </ul>
-                        </div>
-                        <!-- .tags -->
-
-                        <!-- price -->
-                        <div class="car-price">
-                            <a href="#" class="clearfix">
-                                <span class="price">$12.350</span>
-                                <span class="icon-arrow-right2"></span>
-                            </a>
-                        </div>
-                        <!-- .price -->
-
-                    </div>
-                    <!-- .content -->
-
-                </div>
-            </div>
-            <!-- .car vertical medium -->
-
-            <!-- car vertical medium -->
-            <div class="four columns">
-                <div class="car-box vertical medium">
-
-                    <!-- image -->
-                    <div class="car-image">
-                        <a href="#">
-                            <img src="images/car-5.jpg" title="car" alt="car" />
-                            <span class="background">
-                                <span class="icon-plus"></span>
-                            </span>
-                        </a>
-                    </div>
-                    <!-- .image -->
-
-                    <!-- content -->
-                    <div class="car-content">
-
-                        <!-- title -->
-                        <div class="car-title">
-                            <h3><a href="#">Great Honda CLR</a>
-                            </h3>
-                        </div>
-                        <!-- .title -->
-
-                        <!-- tags -->
-                        <div class="car-tags">
-                            <ul class="clearfix">
-                                <li>2012</li>
-                                <li>200hp</li>
-                                <li>18.000mi</li>
-                                <li>Bensin</li>
-                                <li>Automatic</li>
-                            </ul>
-                        </div>
-                        <!-- .tags -->
-
-                        <!-- price -->
-                        <div class="car-price">
-                            <a href="#" class="clearfix">
-                                <span class="price">$12.350</span>
-                                <span class="icon-arrow-right2"></span>
-                            </a>
-                        </div>
-                        <!-- .price -->
-
-                    </div>
-                    <!-- .content -->
-
-                </div>
-            </div>
-            <!-- .car vertical medium -->
-
-            <!-- car vertical medium -->
-            <div class="four columns">
-                <div class="car-box vertical medium">
-
-                    <!-- image -->
-                    <div class="car-image">
-                        <a href="#">
-                            <img src="images/car-6.jpg" title="car" alt="car" />
-                            <span class="background">
-                                <span class="icon-plus"></span>
-                            </span>
-                        </a>
-                    </div>
-                    <!-- .image -->
-
-                    <!-- content -->
-                    <div class="car-content">
-
-                        <!-- title -->
-                        <div class="car-title">
-                            <h3><a href="#">Great Honda CLR</a>
-                            </h3>
-                        </div>
-                        <!-- .title -->
-
-                        <!-- tags -->
-                        <div class="car-tags">
-                            <ul class="clearfix">
-                                <li>2012</li>
-                                <li>200hp</li>
-                                <li>18.000mi</li>
-                                <li>Bensin</li>
-                                <li>Automatic</li>
-                            </ul>
-                        </div>
-                        <!-- .tags -->
-
-                        <!-- price -->
-                        <div class="car-price">
-                            <a href="#" class="clearfix">
-                                <span class="price">$12.350</span>
-                                <span class="icon-arrow-right2"></span>
-                            </a>
-                        </div>
-                        <!-- .price -->
-
-                    </div>
-                    <!-- .content -->
-
-                </div>
-            </div>
-            <!-- .car vertical medium -->
-
-
-        </div>
-        <!-- .2 -->
-
-        <!-- .3 -->
-        <div class="row">
-
-            <!-- car vertical medium -->
-            <div class="four columns">
-                <div class="car-box vertical medium">
-
-                    <!-- image -->
-                    <div class="car-image">
-                        <a href="#">
-                            <img src="images/car-7.jpg" title="car" alt="car" />
-                            <span class="background">
-                                <span class="icon-plus"></span>
-                            </span>
-                        </a>
-                    </div>
-                    <!-- .image -->
-
-                    <!-- content -->
-                    <div class="car-content">
-
-                        <!-- title -->
-                        <div class="car-title">
-                            <h3><a href="#">Great Honda CLR</a>
-                            </h3>
-                        </div>
-                        <!-- .title -->
-
-                        <!-- tags -->
-                        <div class="car-tags">
-                            <ul class="clearfix">
-                                <li>2012</li>
-                                <li>200hp</li>
-                                <li>18.000mi</li>
-                                <li>Bensin</li>
-                                <li>Automatic</li>
-                            </ul>
-                        </div>
-                        <!-- .tags -->
-
-                        <!-- price -->
-                        <div class="car-price">
-                            <a href="#" class="clearfix">
-                                <span class="price">$12.350</span>
-                                <span class="icon-arrow-right2"></span>
-                            </a>
-                        </div>
-                        <!-- .price -->
-
-                    </div>
-                    <!-- .content -->
-
-                </div>
-            </div>
-            <!-- .car vertical medium -->
-
-            <!-- car vertical medium -->
-            <div class="four columns">
-                <div class="car-box vertical medium">
-
-                    <!-- image -->
-                    <div class="car-image">
-                        <a href="#">
-                            <img src="images/car-8.jpg" title="car" alt="car" />
-                            <span class="background">
-                                <span class="icon-plus"></span>
-                            </span>
-                        </a>
-                    </div>
-                    <!-- .image -->
-
-                    <!-- content -->
-                    <div class="car-content">
-
-                        <!-- title -->
-                        <div class="car-title">
-                            <h3><a href="#">Great Honda CLR</a>
-                            </h3>
-                        </div>
-                        <!-- .title -->
-
-                        <!-- tags -->
-                        <div class="car-tags">
-                            <ul class="clearfix">
-                                <li>2012</li>
-                                <li>200hp</li>
-                                <li>18.000mi</li>
-                                <li>Bensin</li>
-                                <li>Automatic</li>
-                            </ul>
-                        </div>
-                        <!-- .tags -->
-
-                        <!-- price -->
-                        <div class="car-price">
-                            <a href="#" class="clearfix">
-                                <span class="price">$12.350</span>
-                                <span class="icon-arrow-right2"></span>
-                            </a>
-                        </div>
-                        <!-- .price -->
-
-                    </div>
-                    <!-- .content -->
-
-                </div>
-            </div>
-            <!-- .car vertical medium -->
-
-            <!-- car vertical medium -->
-            <div class="four columns">
-                <div class="car-box vertical medium">
-
-                    <!-- image -->
-                    <div class="car-image">
-                        <a href="#">
-                            <img src="images/car-9.jpg" title="car" alt="car" />
-                            <span class="background">
-                                <span class="icon-plus"></span>
-                            </span>
-                        </a>
-                    </div>
-                    <!-- .image -->
-
-                    <!-- content -->
-                    <div class="car-content">
-
-                        <!-- title -->
-                        <div class="car-title">
-                            <h3><a href="#">Great Honda CLR</a>
-                            </h3>
-                        </div>
-                        <!-- .title -->
-
-                        <!-- tags -->
-                        <div class="car-tags">
-                            <ul class="clearfix">
-                                <li>2012</li>
-                                <li>200hp</li>
-                                <li>18.000mi</li>
-                                <li>Bensin</li>
-                                <li>Automatic</li>
-                            </ul>
-                        </div>
-                        <!-- .tags -->
-
-                        <!-- price -->
-                        <div class="car-price">
-                            <a href="#" class="clearfix">
-                                <span class="price">$12.350</span>
-                                <span class="icon-arrow-right2"></span>
-                            </a>
-                        </div>
-                        <!-- .price -->
-
-                    </div>
-                    <!-- .content -->
-
-                </div>
-            </div>
-            <!-- .car vertical medium -->
-
-
-        </div>
-        <!-- .3 -->
-
-        <div class="row">
-            <div class="pagination">
-                <ul class="pagination-list clearfix">
-                    <li><a href="#">&laquo; @lang('labels.buves')</a>
-                    </li>
-                    <li><a href="#" class="active">1</a>
-                    </li>
-                    <li><a href="#">2</a>
-                    </li>
-                    <li><a href="#">3</a>
-                    </li>
-                    <li><a href="#">4</a>
-                    </li>
-                    <li><a href="#">9</a>
-                    </li>
-                    <li><a href="#">10</a>
-                    </li>
-                    <li><a href="#">11</a>
-                    </li>
-                    <li><a href="#">12</a>
-                    </li>
-                    <li><a href="#">@lang('labels.kitas') &raquo;</a>
-                    </li>
-                </ul>
-            </div>
+    <div class="row">
+        <div class="pagination">
+            <ul class="pagination-list clearfix">
+                <li><a href="#">&laquo; @lang('labels.buves')</a>
+                </li>
+                <li><a href="#" class="active">1</a>
+                </li>
+                <li><a href="#">2</a>
+                </li>
+                <li><a href="#">3</a>
+                </li>
+                <li><a href="#">4</a>
+                </li>
+                <li><a href="#">9</a>
+                </li>
+                <li><a href="#">10</a>
+                </li>
+                <li><a href="#">11</a>
+                </li>
+                <li><a href="#">12</a>
+                </li>
+                <li><a href="#">@lang('labels.kitas') &raquo;</a>
+                </li>
+            </ul>
         </div>
     </div>
+</div>
 
 
 </div>

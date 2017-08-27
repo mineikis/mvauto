@@ -91,9 +91,9 @@
                         <div class="six columns">
                             <div class="footer-navigation">
                                 <ul class="clearfix">
-                                 <li><a href="pradzia">@lang('labels.pradzia')</a> 
+                                 <li><a href="/">@lang('labels.pradzia')</a> 
                                  </li>
-                                 <li><a href="automobiliai">@lang('labels.automobiliai')</a> 
+                                 <li><a href="automobiliai/1">@lang('labels.automobiliai')</a> 
                                  </li>
                                  <li><a href="kontaktai">@lang('labels.kontaktai')</a> 
                                  </li>
