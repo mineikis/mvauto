@@ -14,16 +14,17 @@
 use App\Spalva;
 
 Route::group(['prefix' => LaravelLocalization::setLocale(),
-			  'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function()
-{
-	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-	Route::get('', 'PradziaController@index');
+	'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function()
+	{
+		/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+		Route::get('', 'PradziaController@index');
 	//Route::get('pradzia', 'PradziaController@index');
-	Route::get('automobilis/{id}', 'AutomobilisController@index');
-	Route::get('automobiliai/{puslapis}', 'AutomobiliaiController@index');
-	Route::get('automobiliai/marke/{pavadinimas}', 'AutomobiliaiController@marke');
-	
-	Route::get('kontaktai',function(){
-		return View::make('kontaktai');
+		Route::get('automobilis/{id}', 'AutomobilisController@index');
+		Route::get('automobiliai/marke/{pavadinimas}', 'AutomobiliaiController@marke');
+		Route::get('automobiliai/{puslapis}', 'AutomobiliaiController@index');
+
+		
+		Route::get('kontaktai',function(){
+			return View::make('kontaktai');
+		});
 	});
-});

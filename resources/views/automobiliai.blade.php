@@ -18,26 +18,16 @@
                 <!-- pagination & sort by -->
                 <div class="ten columns alpha">
                     <ul class="pagination-list clearfix">
-                        <li><a href="#">&laquo; @lang('labels.buves')</a>
+                        @if($next > -1)
+                        <li><a href="/automobiliai/{{$prev}}">&laquo; @lang('labels.buves')</a>
                         </li>
-                        <li><a href="#" class="active">1</a>
+                        @for ($i = 1; $i <= $pageCount; $i++)
+                        <li><a href="/automobiliai/{{$i}}" class="{{ Request::is(LaravelLocalization::getCurrentLocale().'/automobiliai/'.$i) ? 'active' : ''}}">{{$i}}</a>
                         </li>
-                        <li><a href="#">2</a>
+                        @endfor
+                        <li><a  href="/automobiliai/{{$next}}">@lang('labels.kitas') &raquo;</a>
                         </li>
-                        <li><a href="#">3</a>
-                        </li>
-                        <li><a href="#">4</a>
-                        </li>
-                        <li><a href="#">9</a>
-                        </li>
-                        <li><a href="#">10</a>
-                        </li>
-                        <li><a href="#">11</a>
-                        </li>
-                        <li><a href="#">12</a>
-                        </li>
-                        <li><a href="#">@lang('labels.kitas') &raquo;</a>
-                        </li>
+                        @endif
                     </ul>
                 </div>
 
@@ -67,7 +57,7 @@
 
                     <!-- image -->
                     <div class="car-image">
-                    <a href="/automobilis/{{$auto->id}}">
+                        <a href="/automobilis/{{$auto->id}}">
                             <img src="{{ URL::asset('images/'.$auto->id.'/1.jpg') }}" title="car" alt="car" />
                             <span class="background">
                                 <span class="icon-plus"></span>
@@ -126,26 +116,16 @@
     <div class="row">
         <div class="pagination">
             <ul class="pagination-list clearfix">
-                <li><a href="#">&laquo; @lang('labels.buves')</a>
+                @if($next > -1)
+                <li><a href="/automobiliai/{{$prev}}">&laquo; @lang('labels.buves')</a>
                 </li>
-                <li><a href="#" class="active">1</a>
+                @for ($i = 1; $i <= $pageCount; $i++)
+                <li><a href="/automobiliai/{{$i}}" class="{{ Request::is(LaravelLocalization::getCurrentLocale().'/automobiliai/'.$i) ? 'active' : ''}}">{{$i}}</a>
                 </li>
-                <li><a href="#">2</a>
+                @endfor
+                <li><a  href="/automobiliai/{{$next}}">@lang('labels.kitas') &raquo;</a>
                 </li>
-                <li><a href="#">3</a>
-                </li>
-                <li><a href="#">4</a>
-                </li>
-                <li><a href="#">9</a>
-                </li>
-                <li><a href="#">10</a>
-                </li>
-                <li><a href="#">11</a>
-                </li>
-                <li><a href="#">12</a>
-                </li>
-                <li><a href="#">@lang('labels.kitas') &raquo;</a>
-                </li>
+                @endif
             </ul>
         </div>
     </div>

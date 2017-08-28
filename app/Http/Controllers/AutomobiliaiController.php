@@ -14,16 +14,31 @@ class AutomobiliaiController extends Controller
 	public function index($puslapis){
 		$automobiliai = self::automobiliaiPuslapiui($puslapis);
 		$isLocaleLt = self::isLocaleLt();
-		return View::make('automobiliai', compact('automobiliai', 'isLocaleLt'));
+		$pageCount = self::totalPages(Automobilis::visiAktyvus()->count());
+		$next = $puslapis + 1;
+		$prev = $puslapis - 1;
+		if($prev <= 0){
+			$prev = 1;
+		}
+		if($next >= $pageCount){
+			$next = $pageCount;
+		}
+
+		return View::make('automobiliai', compact('automobiliai', 'isLocaleLt', 'pageCount', 'next', 'prev'));
 	}
 
 	public function marke($pavadinimas){
+		$isLocaleLt = self::isLocaleLt();
 		$automobiliai = Automobilis::whereHas('modelis.marke', function ($q) use ($pavadinimas){
 			$q->where('pavadinimas', 'like', '%'.$pavadinimas.'%');
 		})
 		->where('aktyvus', '1')
 		->get();
-		return View::make('automobiliai', compact('automobiliai'));
+		$pageCount = self::totalPages(Automobilis::visiAktyvus()->count());
+		$next = -1;
+		$prev = -1;
+		
+		return View::make('automobiliai', compact('automobiliai', 'isLocaleLt', 'pageCount', 'next', 'prev'));
 	}
 
 	public function automobiliaiPuslapiui($puslapis){
@@ -43,5 +58,9 @@ class AutomobiliaiController extends Controller
 		} else {
 			return false;
 		}
+	}
+
+	public function totalPages($count){
+		return ceil($count/9);
 	}
 }

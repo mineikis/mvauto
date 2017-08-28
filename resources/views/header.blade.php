@@ -57,9 +57,9 @@
                         <ul class="main-navigation nav-1 inline">
                             <li><a href="/" class="{{ Request::is(LaravelLocalization::getCurrentLocale()) ? 'active' : ''}}">@lang('labels.pradzia')</a> 
                             </li>
-                            <li><a href="automobiliai/1" class="{{ Request::is(LaravelLocalization::getCurrentLocale().'/automobiliai/1') ? 'active' : ''}}">@lang('labels.automobiliai')</a> 
+                            <li><a href="/automobiliai/1" class="{{ Request::is(LaravelLocalization::getCurrentLocale().'/automobiliai/1') ? 'active' : ''}}">@lang('labels.automobiliai')</a> 
                             </li>
-                            <li><a href="kontaktai" class="{{ Request::is(LaravelLocalization::getCurrentLocale().'/kontaktai') ? 'active' : ''}}">@lang('labels.kontaktai')</a> 
+                            <li><a href="/kontaktai" class="{{ Request::is(LaravelLocalization::getCurrentLocale().'/kontaktai') ? 'active' : ''}}">@lang('labels.kontaktai')</a> 
                             </li>
                         </ul>
                         <!-- .main navigation -->
