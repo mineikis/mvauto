@@ -22,9 +22,5 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 		Route::get('automobilis/{id}', 'AutomobilisController@index');
 		Route::get('automobiliai/marke/{pavadinimas}', 'AutomobiliaiController@marke');
 		Route::get('automobiliai/{puslapis}', 'AutomobiliaiController@index');
-
-		
-		Route::get('kontaktai',function(){
-			return View::make('kontaktai');
-		});
+		Route::get('kontaktai', 'KontaktaiController@index');
 	});

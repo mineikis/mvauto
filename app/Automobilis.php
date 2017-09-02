@@ -26,11 +26,19 @@ class Automobilis extends Model
 		return $this->belongsTo('App\KuroTipas');
 	}
 
+	public function kebulo_tipas(){
+		return $this->belongsTo('App\KebuloTipas');
+	}
+
+		public function spalva(){
+		return $this->belongsTo('App\Spalva');
+	}
+
 	public static function latest_cars(){
 		return Automobilis::where('aktyvus', '1')->orderBy('patalpinimo_data', 'desc')->take(6)->get();
 	}
 
-		public static function most_expensive_all(){
+	public static function most_expensive_all(){
 		return Automobilis::where('aktyvus', '1')->orderBy('kaina', 'desc')->get();
 	}
 }

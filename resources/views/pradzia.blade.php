@@ -17,7 +17,7 @@
 
                     <!-- title -->
                     <div class="caption-title caption" data-y="320" data-speed="700" data-start="1200" data-easing="easeOutBack">
-                        <h2>{{$brangiausiasAuto->modelis->marke->pavadinimas}} <b>{{$brangiausiasAuto->modelis->pavadinimas}} "{{$brangiausiasAuto->modelis->kita}}"</b> 
+                        <h2>{{$brangiausiasAuto->modelis->marke->pavadinimas}} <b>{{$brangiausiasAuto->modelis->pavadinimas}} {{$brangiausiasAuto->modelis->kita}}</b> 
                         </h2>
                     </div>
                     <!-- title -->

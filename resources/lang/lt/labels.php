@@ -38,6 +38,11 @@ return [
 'papildoma_info' => 'PAPILDOMA INFORMACIJA',
 'detales' => 'DETALĖS',
 'iranga' => 'ĮRANGA',
+'spalva' => 'Spalva',
+'kebulas' => 'Kėbulo tipas',
+'variklis' => 'Variklis',
+'pavaru_deze' => 'Pavarų dėžė',
+'transmisija' => 'Transmisija',
 
 //kontaktai
 'vardas' => 'Vardas',

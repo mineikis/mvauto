@@ -34,11 +34,15 @@ return [
 'buves' => 'бывший',
 'rusiuoti_pagal' => 'Сортировать по',
 
-
 //automobilis
 'papildoma_info' => 'ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ',
 'detales' => 'ЧАСТЕЙ',
 'iranga' => 'ОБОРУДОВАНИЕ',
+'spalva' => 'Цвет',
+'kebulas' => 'Кузов',
+'variklis' => 'Двигатель',
+'transmisija' => 'Трансмиссия',
+
 
 //kontaktai
 'vardas' => 'Имя',
