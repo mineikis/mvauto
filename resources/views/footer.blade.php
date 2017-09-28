@@ -46,7 +46,7 @@
 
                         <!-- pick car widget -->
                         <div class="three columns">
-                            <div class="widget" data-appear-animation="bounceIn">
+                            <div class="widget" data-appear-animation="slideInRight">
                                 <h4><b>@lang('labels.issirinkite') </b>@lang('labels.automobili')</h4>
                                 <p>@lang('tekstai.isirinkite_automobili')</p>
                                 <div class="light-select-input">
