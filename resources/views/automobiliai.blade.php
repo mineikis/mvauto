@@ -81,8 +81,8 @@
                             <ul class="clearfix">
                                 <li>{{ Carbon\Carbon::parse($auto->pirmos_reg_data)->year}}</li>
                                 <li>{{explode('(', $auto->variklis)[0]}}</li>
-                                <li>{{$isLocaleLt ? $auto->kuro_tipas->pavadinimas_lt : $auto->kuro_tipas->pavadinimas_ru}}</li>
-                                <li>{{$isLocaleLt ? $auto->pavaru_deze->pavadinimas_lt : $auto->pavaru_deze->pavadinimas_ru}}</li>
+                                <li>{{\App\Helpers\LanguageHelper::kuroTipas($auto)}}</li>
+                                <li>{{\App\Helpers\LanguageHelper::pavaruDeze($auto)}}</li>
                                 @if(!empty ($auto->rida))
                                 <li>{{$auto->rida}}@lang('labels.km')</li>
                                 @endif

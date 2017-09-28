@@ -76,7 +76,7 @@
     ================================================== -->
     <script type="text/javascript" src="{{ URL::asset('http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('http://maps.googleapis.com/maps/api/js?sensor=false') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('http://maps.googleapis.com/maps/api/js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/jquery.dscountdown.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/chosen.jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/jquery.themepunch.plugins.min.js') }}"></script>

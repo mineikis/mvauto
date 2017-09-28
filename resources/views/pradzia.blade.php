@@ -27,8 +27,8 @@
                         <ul class="tag clearfix">
                             <li>{{ Carbon\Carbon::parse($brangiausiasAuto->pirmos_reg_data)->year}}</li>
                             <li>{{explode('(', $brangiausiasAuto->variklis)[0]}}</li>
-                            <li>{{$isLocaleLt ? $brangiausiasAuto->kuro_tipas->pavadinimas_lt : $brangiausiasAuto->kuro_tipas->pavadinimas_ru}}</li>
-                            <li>{{$isLocaleLt ? $brangiausiasAuto->pavaru_deze->pavadinimas_lt : $brangiausiasAuto->pavaru_deze->pavadinimas_ru}}</li>
+                            <li>{{\App\Helpers\LanguageHelper::kuroTipas($brangiausiasAuto)}}</li>
+                            <li>{{\App\Helpers\LanguageHelper::pavaruDeze($brangiausiasAuto)}}</li>
                             <li class="tag-price">
                                 <a href="automobilis/{{$brangiausiasAuto->id}}" class="clearfix">
                                     <span class="price"><b>{{$brangiausiasAuto->kaina}} €</b> 
@@ -82,7 +82,7 @@
                         @foreach($chunk as $auto)
                         <!-- car -->
                         <div class="four columns">
-                            <div class="car-box vertical medium" data-appear-animation="slideInLeft">
+                            <div class="car-box vertical medium" data-appear-animation="bounceIn">
 
                                 <!-- image -->
                                 <div class="car-image">
@@ -110,8 +110,8 @@
                                         <ul class="clearfix">
                                             <li>{{ Carbon\Carbon::parse($auto->pirmos_reg_data)->year}}</li>
                                             <li>{{explode('(', $auto->variklis)[0]}}</li>
-                                            <li>{{$isLocaleLt ? $auto->kuro_tipas->pavadinimas_lt : $auto->kuro_tipas->pavadinimas_ru}}</li>
-                                            <li>{{$isLocaleLt ? $auto->pavaru_deze->pavadinimas_lt : $auto->pavaru_deze->pavadinimas_ru}}</li>
+                                            <li>{{\App\Helpers\LanguageHelper::kuroTipas($auto)}}</li>
+                                            <li>{{\App\Helpers\LanguageHelper::pavaruDeze($auto)}}</li>
                                             @if(!empty ($auto->rida))
                                             <li>{{$auto->rida}}@lang('labels.km')</li>
                                             @endif

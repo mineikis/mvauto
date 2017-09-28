@@ -7,7 +7,7 @@ jQuery( document ).ready( function ( $ )
             {
                 "latitude": "55.266106",
                 "longitude": "22.310318",
-                "icon": "images/marker1.png",
+                "icon": "/images/marker1.png",
                 "baloon_text": ''
   } ]
     };
