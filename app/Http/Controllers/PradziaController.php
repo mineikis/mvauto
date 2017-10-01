@@ -9,6 +9,7 @@ use File;
 use App\Automobilis;
 use View;
 use LaravelLocalization;
+use Illuminate\Support\Facades\Auth;
 
 
 class PradziaController extends Controller
@@ -19,8 +20,6 @@ class PradziaController extends Controller
 		$naujausi = Automobilis::latest_cars();
 		$nuotraukosTitulinio = self::nuotraukos($brangiausiasAuto->id);
 		$aktyviosMarkes = self::aktyviosMarkes();
-
-		//dd($aktyviosMarkes);
 
 		return View::make('pradzia', compact('brangiausiasAuto', 'nuotraukosTitulinio', 'isLocaleLt', 'naujausi', 'aktyviosMarkes'));
 	}
@@ -50,4 +49,23 @@ class PradziaController extends Controller
 		}
 		return array_unique($markes);
 	}
+
+	public function logout(){
+		Auth::logout();
+		return redirect('');
+	}
+
+	public function login(){
+		return View::make('auth/login');
+	}
+
+	public function doLogin(Request $request){
+		$email = $request->email;
+		$password = $request->password;
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            // Authentication passed...
+            return redirect()->intended('');
+        }
+        return redirect()->intended('login');
+    }
 }

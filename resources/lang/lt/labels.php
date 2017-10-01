@@ -1,7 +1,7 @@
 <?php
 
 return [
-'title'		   => 'MVAuto - Naudotų automobilių prekyba',
+'title'		   => 'MVAuto - Automobilių prekyba',
 'km'		   => 'km',
 
 //master, header, footer

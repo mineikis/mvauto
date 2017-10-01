@@ -12,6 +12,7 @@
 */
 
 use App\Spalva;
+use App\Http\Controllers\Auth\LoginController;
 
 Route::group(['prefix' => LaravelLocalization::setLocale(),
 	'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function()
@@ -24,3 +25,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 		Route::get('automobiliai/{puslapis}', 'AutomobiliaiController@index');
 		Route::get('kontaktai', 'KontaktaiController@index');
 	});
+
+
+Route::get('logout', 'PradziaController@logout');
+Route::get('login', 'PradziaController@login');
+Route::post('authenticate', 'PradziaController@doLogin');

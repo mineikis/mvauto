@@ -1,8 +1,8 @@
 
 <header>
 	
- <!-- ================================================== HEADER ================================================== -->
- <header>
+   <!-- ================================================== HEADER ================================================== -->
+   <header>
 
     <!-- top bar -->
     <div class="top-bar">
@@ -26,6 +26,12 @@
                         </li>
                         @endforeach
                     </ul>
+                    @guest
+                    @else
+                    <div class="social">
+                    <a rel="alternate" class="tip-below success" href="logout">Logout</a>
+                    </div>
+                    @endguest
                 </div>
                 <!-- language -->
 

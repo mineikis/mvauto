@@ -21,7 +21,7 @@ class LanguageHelper{
 	public static function pavaruDeze($auto){
 		$intId = $auto->id;
 		if(LaravelLocalization::getCurrentLocale() == 'lt'){
-			return Automobilis::find($intId)->pavaru_deze()->pavadinimas_lt;
+			return Automobilis::find($intId)->pavaru_deze->pavadinimas_lt;
 		} else if (LaravelLocalization::getCurrentLocale() == 'en') {
 			return  Automobilis::find($intId)->pavaru_deze->pavadinimas_en;
 		} else if(LaravelLocalization::getCurrentLocale() == 'ru'){
