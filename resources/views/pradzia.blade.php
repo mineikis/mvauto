@@ -152,6 +152,8 @@
             </div>
         </div>
     </section>
-
+@section('subfooter')
+@include('subfooter')
+@show
     <!-- ================================================== END LATEST CARS ================================================== -->
     @stop

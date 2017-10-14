@@ -138,5 +138,7 @@
         </div>
     </div>
 </section>
-
+@section('subfooter')
+@include('subfooter')
+@show
 @stop

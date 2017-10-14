@@ -67,6 +67,11 @@
                             </li>
                             <li><a href="/kontaktai" class="{{ Request::is(LaravelLocalization::getCurrentLocale().'/kontaktai') ? 'active' : ''}}">@lang('labels.kontaktai')</a> 
                             </li>
+                            @guest
+                            @else
+                            <li><a href="/admin" class="{{ Request::is('admin') ? 'active' : ''}}">Admin</a> 
+                            </li>
+                            @endguest
                         </ul>
                         <!-- .main navigation -->
 

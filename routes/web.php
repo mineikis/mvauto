@@ -30,3 +30,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 Route::get('logout', 'PradziaController@logout');
 Route::get('login', 'PradziaController@login');
 Route::post('authenticate', 'PradziaController@doLogin');
+
+Route::group( ['middleware' => 'auth' ], function(){
+	Route::get('admin', 'AdminController@index')->middleware('auth');
+	Route::get('admin/parduota/{id}', 'AdminController@destroy')->middleware('auth');
+});

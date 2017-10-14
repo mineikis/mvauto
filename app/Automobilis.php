@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Automobilis extends Model
 {
+	public $timestamps = false;
+	
 	public static function brangiausias(){
 		return Automobilis::where('aktyvus', '1')->orderBy('kaina', 'desc')->get()->first();
 	}

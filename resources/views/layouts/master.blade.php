@@ -20,6 +20,7 @@
 
     <!-- CSS
     ================================================== -->
+    @yield('styles')
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
 
     <!--[if lt IE 9]>
@@ -88,6 +89,7 @@
     <script type="text/javascript" src="{{ URL::asset('js/retina-1.1.0.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/jquery.mapmarker.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/custom.js') }}"></script>
+    @yield('scripts')
     <!-- End Document
     ================================================== -->
 </body>
