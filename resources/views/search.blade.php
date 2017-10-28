@@ -62,13 +62,11 @@
                                 <!-- select input -->
                                 <div class="two columns">
                                     <div class="select-input">
-                                        <select>
+                                        <select name="forma" onchange="location = this.value;">
                                             <option value="" selected="selected">@lang('labels.modelis')</option>
-                                            <option value="acura">155</option>
-                                            <option value="alfa_romeo">156S</option>
-                                            <option value="aston_martin">156 JTD</option>
-                                            <option value="audi">Brera</option>
-                                            <option value="bentley">159 JTD</option>
+                                            @foreach((new \App\Helpers\FooterHelper)->aktyvusModeliai() as $modelis)
+                                            <option value="\automobiliai\modelis\{{$modelis}}">{{$modelis}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -77,13 +75,13 @@
                                 <!-- select input -->
                                 <div class="two columns">
                                     <div class="select-input">
-                                        <select>
+                                        <select name="forma" onchange="location = this.value;">
                                             <option value="" selected="selected">@lang('labels.kaina')</option>
-                                            <option value="acura">$0 - $10.000</option>
-                                            <option value="alfa_romeo">$10.000 - $20.000</option>
-                                            <option value="aston_martin">$20.000 - $40.000</option>
-                                            <option value="audi">$40.000 - $50.000</option>
-                                            <option value="audi">$50.000 +</option>
+                                            <option value="\automobiliai\kaina\1">0€ - 5.000€</option>
+                                            <option value="\automobiliai\kaina\2">5.000€ - 10.000€</option>
+                                            <option value="\automobiliai\kaina\3">10.000€ - 15.000€</option>
+                                            <option value="\automobiliai\kaina\4">15.000€ - 20.000€</option>
+                                            <option value="\automobiliai\kaina\5">20.000€ +</option>
                                         </select>
                                     </div>
                                 </div>
@@ -92,14 +90,12 @@
                                 <!-- select input -->
                                 <div class="two columns">
                                     <div class="select-input">
-                                        <select>
-                                            <option value="" selected="selected">@lang('labels.rida')</option>
-                                            <option value="acura">0mi - 5.000mi</option>
-                                            <option value="alfa_romeo">5.000mi - 10.000mi</option>
-                                            <option value="aston_martin">10.000min - 50.000mi</option>
-                                            <option value="audi">50.000mi - 100.000mi</option>
-                                            <option value="audi">100.000mi - 150.000mi</option>
-                                            <option value="audi">150.000mi +</option>
+                                        <select name="forma" onchange="location = this.value;">
+                                            <option value="" selected="selected">@lang('labels.standartas')</option>
+                                            <option value="\automobiliai\standartas\2">Euro 2</option>
+                                            <option value="\automobiliai\standartas\3">Euro 3</option>
+                                            <option value="\automobiliai\standartas\4">Euro 4</option>
+                                            <option value="\automobiliai\standartas\5">Euro 5</option>
                                         </select>
                                     </div>
                                 </div>
@@ -108,28 +104,11 @@
                                 <!-- select input -->
                                 <div class="two columns">
                                     <div class="select-input">
-                                        <select>
-                                            <option value="" selected="selected">@lang('labels.kondicija')</option>
-                                            <option value="acura">New</option>
-                                            <option value="acura">Used</option>
-                                            <option value="alfa_romeo">Perfect</option>
-                                            <option value="aston_martin">Good</option>
-                                            <option value="audi">Damaged</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <!-- .select input -->
-
-                                <!-- select input -->
-                                <div class="two columns">
-                                    <div class="select-input">
-                                        <select>
+                                        <select name="forma" onchange="location = this.value;">
                                             <option value="" selected="selected">@lang('labels.metai')</option>
-                                            <option value="alfa_romeo">2010</option>
-                                            <option value="aston_martin">2011</option>
-                                            <option value="audi">2012</option>
-                                            <option value="bentley">2013</option>
-                                            <option value="bentley">2014</option>
+                                            @foreach((new \App\Helpers\FooterHelper)->aktyvusMetai() as $metai)
+                                            <option value="\automobiliai\metai\{{$metai}}">{{$metai}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>

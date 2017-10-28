@@ -22,7 +22,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 	//Route::get('pradzia', 'PradziaController@index');
 		Route::get('automobilis/{id}', 'AutomobilisController@index');
 		Route::get('automobiliai/marke/{pavadinimas}', 'AutomobiliaiController@marke');
+		Route::get('automobiliai/modelis/{pavadinimas}', 'AutomobiliaiController@modelis');
+		Route::get('automobiliai/kaina/{kaina}', 'AutomobiliaiController@kaina');
+		Route::get('automobiliai/standartas/{standartas}', 'AutomobiliaiController@standartas');
+		Route::get('automobiliai/metai/{metai}', 'AutomobiliaiController@metai');
 		Route::get('automobiliai/{puslapis}', 'AutomobiliaiController@index');
+		Route::get('greitai/{puslapis}', 'AutomobiliaiController@greitai');
 		Route::get('kontaktai', 'KontaktaiController@index');
 	});
 

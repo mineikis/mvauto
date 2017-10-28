@@ -16,6 +16,19 @@ class Automobilis extends Model
 		return Automobilis::where('aktyvus', '1')->get();
 	}
 
+	public static function visiAktyvusLietuvoje(){
+		return Automobilis::where('aktyvus', '1')->where('greitai', '0')->get();
+	}
+
+	public static function visiAktyvusGreitai(){
+		return Automobilis::where('aktyvus', '1')->where('greitai', '1')->get();
+	}
+
+
+	public static function visiAktyvusPagalRegistracija(){
+		return Automobilis::where('aktyvus', '1')->orderBy('pirmos_reg_data', 'desc')->get();
+	}
+
 	public function modelis(){
 		return $this->belongsTo('App\Modelis');
 	}
@@ -37,10 +50,14 @@ class Automobilis extends Model
 	}
 
 	public static function latest_cars(){
-		return Automobilis::where('aktyvus', '1')->orderBy('patalpinimo_data', 'desc')->take(6)->get();
+		return Automobilis::where('aktyvus', '1')->orderBy('kaina', 'desc')->take(6)->get();
 	}
 
-	public static function most_expensive_all(){
-		return Automobilis::where('aktyvus', '1')->orderBy('kaina', 'desc')->get();
+	public static function most_expensive_lietuvoje_all(){
+		return Automobilis::where('aktyvus', '1')->where('greitai', '0')->orderBy('kaina', 'desc')->get();
+	}
+
+	public static function most_expensive_greitai_all(){
+		return Automobilis::where('aktyvus', '1')->where('greitai', '1')->orderBy('kaina', 'desc')->get();
 	}
 }

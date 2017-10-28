@@ -24,11 +24,12 @@ return [
 
 //automobiliai
 'automobiliu_sarasas' => 'Список автомобилей',
+'greitai' => 'Cкоро',
 'modelis' => 'Mодель',
 'marke' => 'Mаркa',
 'kaina' => 'Цена',
 'rida' => 'Пробег',
-'kondicija' => 'Cостояние',
+'standartas' => 'Cтандарт',
 'metai' => 'Год',
 'kitas' => 'Cледующий',
 'buves' => 'бывший',

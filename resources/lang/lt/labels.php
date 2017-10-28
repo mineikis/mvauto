@@ -23,12 +23,13 @@ return [
 'visi_skelbimai' => 'Peržiūrėti visus mūsų skelbimus',
 
 //automobiliai
+'greitai' => 'Greitai',
 'automobiliu_sarasas' => 'Automobilių Sąrašas',
 'modelis' => 'Modelis',
 'marke' => 'Markė',
 'kaina' => 'Kaina',
 'rida' => 'Rida',
-'kondicija' => 'Kondicija',
+'standartas' => 'Standartas',
 'kitas' => 'Kitas',
 'buves' => 'Buvęs',
 'metai' => 'Metai',

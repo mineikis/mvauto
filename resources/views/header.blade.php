@@ -65,6 +65,8 @@
                             </li>
                             <li><a href="/automobiliai/1" class="{{ Request::is(LaravelLocalization::getCurrentLocale().'/automobiliai/1') ? 'active' : ''}}">@lang('labels.automobiliai')</a> 
                             </li>
+                            <li><a href="/greitai/1" class="{{ Request::is(LaravelLocalization::getCurrentLocale().'/greitai/1') ? 'active' : ''}}">@lang('labels.greitai')</a> 
+                            </li>
                             <li><a href="/kontaktai" class="{{ Request::is(LaravelLocalization::getCurrentLocale().'/kontaktai') ? 'active' : ''}}">@lang('labels.kontaktai')</a> 
                             </li>
                             @guest

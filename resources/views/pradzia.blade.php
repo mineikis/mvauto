@@ -58,7 +58,7 @@
                     <h1 data-appear-animation="slideInLeft"><b>@lang('labels.sveiki_atvyke')</b> 
                     </h1>
                     <p data-appear-animation="slideInRight">@lang('tekstai.sveiki_atvyke_1')
-                        <br />@lang('tekstai.sveiki_atvyke_2')</p>
+                        <br /></p>
                     </div>
                 </div>
             </div>
@@ -73,8 +73,7 @@
             <div class="container">
                 <div class="row">
                     <div class="heading space-top-and-bottom small">
-                        <h2>@lang('labels.naujausi') <b>@lang('labels.skelbimai')</b> 
-                        </h2>
+                        <h2><b>@lang('labels.skelbimai')</b></h2>
                         <span></span>
                     </div>
                     @foreach ($naujausi->chunk(3) as $chunk)

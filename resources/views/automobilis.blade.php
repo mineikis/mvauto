@@ -20,14 +20,6 @@
             <div class="car-single-header clearfix">
 
                 <div class="ten columns alpha" data-appear-animation="slideInLeft">
-
-                    <!-- date added -->
-                    <div class="single-car-date-added">
-                        <p>
-                            <span class="icon-calendar"></span>{{ $automobilis->patalpinimo_data }}</p>
-                        </div>
-                        <!-- date added -->
-
                         <!-- car title -->
                         <div class="single-car-title">
                             <h3>{{$automobilis->modelis->marke->pavadinimas}} {{$automobilis->modelis->pavadinimas}} @if(!empty ($automobilis->modelis->kita))"{{$automobilis->modelis->kita}}"@endif</h3>
@@ -61,7 +53,6 @@
                                 <ul>
                                     @foreach($nuotraukos as $nuotrauka)
                                     <li data-transition="fade" data-slotamount="1">
-
                                         <img src="{{ URL::asset('images/'.$automobilis->id.'/'.$nuotrauka) }}" alt="" title="" />
                                     </li>
                                     @endforeach

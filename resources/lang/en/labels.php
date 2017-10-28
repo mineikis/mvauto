@@ -23,12 +23,13 @@ return [
 'visi_skelbimai' => 'See all our advertisments',
 
 //automobiliai
+'greitai' => 'Soon',
 'automobiliu_sarasas' => 'Car list',
 'modelis' => 'Model',
 'marke' => 'Brand',
 'kaina' => 'Price',
 'rida' => 'Mileage',
-'kondicija' => 'Condition',
+'standartas' => 'Standard',
 'kitas' => 'Next',
 'buves' => 'Previous',
 'metai' => 'Year',

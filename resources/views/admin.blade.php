@@ -29,6 +29,7 @@
             <div class="vcenter"><a href="admin">Keisti</a></div>
         </div>
     </div>
+    <hr style="height:1px;border:none;color:#333;background-color:#333;">
     @endforeach
 </div>
 @endsection
