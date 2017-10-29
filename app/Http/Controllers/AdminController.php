@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use View;
 use App\Automobilis;
 use LaravelLocalization;
+use Carbon\Carbon;
+use File;
 
 class AdminController extends Controller
 {
@@ -87,7 +89,19 @@ class AdminController extends Controller
     {
         $auto = Automobilis::find($id);
         $auto->aktyvus = false;
+        $auto->pardavimo_data = new Carbon();
         $auto->save();
+        
+        $directory = public_path().'/images/'.$id;
+        $success = File::deleteDirectory($directory);
+        return redirect()->intended('admin');
+    }
+    public function grizoILietuva($id)
+    {
+        $auto = Automobilis::find($id);
+        $auto->greitai = false;
+        $auto->save();
+
         return redirect()->intended('admin');
     }
 }

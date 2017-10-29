@@ -13,7 +13,6 @@
         <div class="row">
 
             <div class="pagination clearfix">
-                <!-- <h3>Current listing gives <b>1.234</b> cars in <b>12</b> pages</h3> -->
 
                 <!-- pagination & sort by -->
                 <div class="ten columns alpha">
@@ -34,12 +33,12 @@
                 <!-- sort by -->
                 <div class="two columns" data-appear-animation "slideInRight">
                     <div class="light-select-input sort-by">
-                        <select>
+                        <select name="forma" onchange="location = this.value;">
                             <option value="" selected="selected">@lang('labels.rusiuoti_pagal')</option>
-                            <option value="">Price ASC</option>
-                            <option value="">Price DSC</option>
-                            <option value="">Date ASC</option>
-                            <option value="">Date DSC</option>
+                            <option value="\automobiliai\rusiuoti\1">@lang('labels.rusiuoti_kaina_desc')</option>
+                            <option value="\automobiliai\rusiuoti\2">@lang('labels.rusiuoti_kaina_asc')</option>
+                            <option value="\automobiliai\rusiuoti\3">@lang('labels.rusiuoti_data_desc')</option>
+                            <option value="\automobiliai\rusiuoti\4">@lang('labels.rusiuoti_data_asc')</option>
                         </select>
                     </div>
                 </div>

@@ -26,6 +26,42 @@ class AutomobiliaiController extends Controller
 		return View::make('automobiliai', compact('automobiliai', 'pageCount', 'next', 'prev'));
 	}
 
+	public function rusiuoti($rusiuoti){
+		if($rusiuoti == 1){
+			$automobiliai = Automobilis::where('aktyvus', '1')->where('greitai', '0')->orderBy('kaina', 'desc')->get();
+		} else if($rusiuoti == 2){
+			$automobiliai = Automobilis::where('aktyvus', '1')->where('greitai', '0')->orderBy('kaina', 'asc')->get();
+		} else if($rusiuoti == 3){
+			$automobiliai = Automobilis::where('aktyvus', '1')->where('greitai', '0')->orderBy('patalpinimo_data', 'desc')->get();
+		} else if($rusiuoti == 4){
+			$automobiliai = Automobilis::where('aktyvus', '1')->where('greitai', '0')->orderBy('patalpinimo_data', 'asc')->get();
+		}
+		
+		$pageCount = self::totalPages(Automobilis::visiAktyvus()->count());
+		$next = -1;
+		$prev = -1;
+
+		return View::make('automobiliai', compact('automobiliai', 'pageCount', 'next', 'prev'));
+	}
+
+	public function rusiuotiGreitai($rusiuoti){
+		if($rusiuoti == 1){
+			$automobiliai = Automobilis::where('aktyvus', '1')->where('greitai', '1')->orderBy('kaina', 'desc')->get();
+		} else if($rusiuoti == 2){
+			$automobiliai = Automobilis::where('aktyvus', '1')->where('greitai', '1')->orderBy('kaina', 'asc')->get();
+		} else if($rusiuoti == 3){
+			$automobiliai = Automobilis::where('aktyvus', '1')->where('greitai', '1')->orderBy('patalpinimo_data', 'desc')->get();
+		} else if($rusiuoti == 4){
+			$automobiliai = Automobilis::where('aktyvus', '1')->where('greitai', '1')->orderBy('patalpinimo_data', 'asc')->get();
+		}
+		
+		$pageCount = self::totalPages(Automobilis::visiAktyvus()->count());
+		$next = -1;
+		$prev = -1;
+
+		return View::make('greitai', compact('automobiliai', 'pageCount', 'next', 'prev'));
+	}
+
 	public function greitai($puslapis){
 		$automobiliai = self::automobiliaiGreitaiPuslapiui($puslapis);
 		$pageCount = self::totalPages(Automobilis::visiAktyvusGreitai()->count());

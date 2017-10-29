@@ -20,7 +20,7 @@ return [
 'sveiki_atvyke' => 'Sveiki atvykę',
 'naujausi' => 'Naujausi',
 'skelbimai' => 'Skelbimai',
-'visi_skelbimai' => 'Peržiūrėti visus mūsų skelbimus',
+'visi_skelbimai' => 'Peržiūrėti visus skelbimus',
 
 //automobiliai
 'greitai' => 'Greitai',
@@ -34,6 +34,10 @@ return [
 'buves' => 'Buvęs',
 'metai' => 'Metai',
 'rusiuoti_pagal' => 'Rūšiuoti Pagal',
+'rusiuoti_kaina_asc' => 'Kaina &darr;',
+'rusiuoti_kaina_desc' => 'Kaina &uarr;',
+'rusiuoti_data_asc' => 'Patalpinta &darr;',
+'rusiuoti_data_desc' => 'Patalpinta &uarr;',
 
 //automobilis
 'papildoma_info' => 'PAPILDOMA INFORMACIJA',

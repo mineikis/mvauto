@@ -53,11 +53,7 @@
    @include('header')
    @show
 
-
-
-   <div class="container">
-      @yield('content')
-  </div>
+   @yield('content')
 
   @section('footer')
   @include('footer')

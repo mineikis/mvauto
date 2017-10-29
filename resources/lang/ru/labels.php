@@ -20,7 +20,7 @@ return [
 'sveiki_atvyke' => 'Добро пожаловать',
 'naujausi' => 'Новые',
 'skelbimai' => 'Oбъявления',
-'visi_skelbimai' => 'Проверить все наши объявления',
+'visi_skelbimai' => 'Проверить все объявления',
 
 //automobiliai
 'automobiliu_sarasas' => 'Список автомобилей',
@@ -34,6 +34,10 @@ return [
 'kitas' => 'Cледующий',
 'buves' => 'бывший',
 'rusiuoti_pagal' => 'Сортировать по',
+'rusiuoti_kaina_asc' => 'Цена &uarr;',
+'rusiuoti_kaina_desc' => 'Цена &darr;',
+'rusiuoti_data_asc' => 'Добавлена дата &darr;',
+'rusiuoti_data_desc' => 'Добавлена дата  &uarr;',
 
 //automobilis
 'papildoma_info' => 'ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ',

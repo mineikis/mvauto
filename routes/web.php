@@ -26,6 +26,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 		Route::get('automobiliai/kaina/{kaina}', 'AutomobiliaiController@kaina');
 		Route::get('automobiliai/standartas/{standartas}', 'AutomobiliaiController@standartas');
 		Route::get('automobiliai/metai/{metai}', 'AutomobiliaiController@metai');
+		Route::get('automobiliai/rusiuoti/{rusiuoti}', 'AutomobiliaiController@rusiuoti');
+		Route::get('greitai/rusiuoti/{rusiuoti}', 'AutomobiliaiController@rusiuotiGreitai');
 		Route::get('automobiliai/{puslapis}', 'AutomobiliaiController@index');
 		Route::get('greitai/{puslapis}', 'AutomobiliaiController@greitai');
 		Route::get('kontaktai', 'KontaktaiController@index');
@@ -37,6 +39,7 @@ Route::get('login', 'PradziaController@login');
 Route::post('authenticate', 'PradziaController@doLogin');
 
 Route::group( ['middleware' => 'auth' ], function(){
-	Route::get('admin', 'AdminController@index')->middleware('auth');
-	Route::get('admin/parduota/{id}', 'AdminController@destroy')->middleware('auth');
+	Route::get('admin', 'AdminController@index');
+	Route::get('admin/parduota/{id}', 'AdminController@destroy');
+	Route::get('admin/lietuvoj/{id}', 'AdminController@grizoILietuva');
 });

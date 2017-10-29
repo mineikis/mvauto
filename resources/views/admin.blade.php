@@ -9,28 +9,35 @@
 @stop
 <div class="content">
     <div class="button-wrap"> <a href="#" class="big button light" data-appear-animation="flipInX">Naujas</a> </div>
+    <div class="container">
     @foreach($aktyvus as $auto)
     <div class="row row-container">
         <div class="col-md-3">
             <div class="car-image">
-                <img src="{{ URL::asset('images/'.$auto->id.'/1.jpg') }}" title="car" alt="car" />
+                <img src="{{ URL::asset('images/'.$auto->id.'/1.jpg') }}" title="{{$auto->modelis->marke->pavadinimas}} {{$auto->modelis->pavadinimas}}" alt="car" />
             </div>
         </div>
         <div class="col-md-4">
             <div class="vcenter">{{$auto->modelis->marke->pavadinimas}} {{$auto->modelis->pavadinimas}} {{$auto->modelis->kita}}</div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="vcenter">{{$auto->kaina}} €</div>
         </div>
         <div class="col-md-1">
-            <div class="vcenter"><a href="admin/parduota/{{$auto->id}}" onclick="return confirm('Tikrai tikrai istrinti??? :)')">Parduota</a></div>
+            @if ($auto->greitai)
+            <div class="vcenter"><a href="/admin/lietuvoj/{{$auto->id}}" onclick="return confirm('Tikrai tikrai jau lietuvoj??? :)')">Lietuvoj</a></div>
+            @endif
         </div>
         <div class="col-md-1">
-            <div class="vcenter"><a href="admin">Keisti</a></div>
+            <div class="vcenter"><a href="/admin/parduota/{{$auto->id}}" onclick="return confirm('Tikrai tikrai istrinti??? :)')">Parduota</a></div>
+        </div>
+        <div class="col-md-1">
+            <div class="vcenter"><a href="/admin">Redaguoti</a></div>
         </div>
     </div>
     <hr style="height:1px;border:none;color:#333;background-color:#333;">
     @endforeach
+    </div>
 </div>
 @endsection
 

@@ -20,7 +20,7 @@ return [
 'sveiki_atvyke' => 'Welcome',
 'naujausi' => 'Newest',
 'skelbimai' => 'Advertisments',
-'visi_skelbimai' => 'See all our advertisments',
+'visi_skelbimai' => 'See all advertisments',
 
 //automobiliai
 'greitai' => 'Soon',
@@ -34,6 +34,10 @@ return [
 'buves' => 'Previous',
 'metai' => 'Year',
 'rusiuoti_pagal' => 'Sort By',
+'rusiuoti_kaina_asc' => 'Price &darr;',
+'rusiuoti_kaina_desc' => 'Price &uarr;',
+'rusiuoti_data_asc' => 'Date added &darr;',
+'rusiuoti_data_desc' => 'Date added &uarr;',
 
 //automobilis
 'papildoma_info' => 'ADDITIONAL INFO',

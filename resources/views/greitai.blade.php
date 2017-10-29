@@ -34,12 +34,12 @@
                 <!-- sort by -->
                 <div class="two columns" data-appear-animation "slideInRight">
                     <div class="light-select-input sort-by">
-                        <select>
+                        <select name="forma" onchange="location = this.value;">
                             <option value="" selected="selected">@lang('labels.rusiuoti_pagal')</option>
-                            <option value="">Price ASC</option>
-                            <option value="">Price DSC</option>
-                            <option value="">Date ASC</option>
-                            <option value="">Date DSC</option>
+                            <option value="\greitai\rusiuoti\1">@lang('labels.rusiuoti_kaina_desc')</option>
+                            <option value="\greitai\rusiuoti\2">@lang('labels.rusiuoti_kaina_asc')</option>
+                            <option value="\greitai\rusiuoti\3">@lang('labels.rusiuoti_data_desc')</option>
+                            <option value="\greitai\rusiuoti\4">@lang('labels.rusiuoti_data_asc')</option>
                         </select>
                     </div>
                 </div>
