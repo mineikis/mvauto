@@ -12,10 +12,10 @@ class AutomobilisController extends Controller
 	public function index($id){
 		$automobilis = Automobilis::find($id);
 		$nuotraukos = self::nuotraukos($id);
-		$isLocaleLt = self::isLocaleLt();
 		$reklama = Automobilis::inRandomOrder()->where('aktyvus', '1')->take(3)->get();
+		$arklioGalia = $automobilis->galia_kw / 0.73549875;
 		
-		return View::make('automobilis', compact('automobilis', 'nuotraukos', 'isLocaleLt', 'reklama'));
+		return View::make('automobilis', compact('automobilis', 'nuotraukos', 'reklama', 'arklioGalia'));
 	}
 
 	public function nuotraukos($id){
@@ -25,14 +25,6 @@ class AutomobilisController extends Controller
 		}
 
 		return $nuotraukos;
-	}
-
-	public function isLocaleLt(){
-		if(LaravelLocalization::getCurrentLocale() == 'lt'){
-			return true;
-		} else {
-			return false;
-		}
 	}
 
 }

@@ -14,9 +14,11 @@
                                 <ul class="clearfix">
                                  <li><a href="/">@lang('labels.pradzia')</a> 
                                  </li>
-                                 <li><a href="automobiliai/1">@lang('labels.automobiliai')</a> 
+                                 <li><a href="/automobiliai/1">@lang('labels.automobiliai')</a> 
                                  </li>
-                                 <li><a href="kontaktai">@lang('labels.kontaktai')</a> 
+                                 <li><a href="/greitai/1">@lang('labels.greitai')</a> 
+                                 </li>
+                                 <li><a href="/kontaktai">@lang('labels.kontaktai')</a> 
                                  </li>
                              </ul>
                          </div>

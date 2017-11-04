@@ -78,7 +78,6 @@ class AutomobiliaiController extends Controller
 	}
 
 	public function marke($pavadinimas){
-		$isLocaleLt = self::isLocaleLt();
 		$automobiliai = Automobilis::whereHas('modelis.marke', function ($q) use ($pavadinimas){
 			$q->where('pavadinimas', 'like', '%'.$pavadinimas.'%');
 		})
@@ -88,7 +87,7 @@ class AutomobiliaiController extends Controller
 		$next = -1;
 		$prev = -1;
 		
-		return View::make('automobiliai', compact('automobiliai', 'isLocaleLt', 'pageCount', 'next', 'prev'));
+		return View::make('automobiliai', compact('automobiliai', 'pageCount', 'next', 'prev'));
 	}
 
 	public function modelis($pavadinimas){
@@ -124,14 +123,18 @@ class AutomobiliaiController extends Controller
 	}
 
 	public function standartas($standartas){
-		if($standartas == 2){
-			$automobiliai = Automobilis::where('standartas', 'like', 'euro2')->where('aktyvus', '1')->get();
+		if($standartas == 1){
+			$automobiliai = Automobilis::where('standartas', 'like', 'Euro 1')->where('aktyvus', '1')->get();
+		} else if($standartas == 2){
+			$automobiliai = Automobilis::where('standartas', 'like', 'Euro 2')->where('aktyvus', '1')->get();
 		} else if($standartas == 3){
-			$automobiliai = Automobilis::where('standartas', 'like', 'euro3')->where('aktyvus', '1')->get();
+			$automobiliai = Automobilis::where('standartas', 'like', 'Euro 3')->where('aktyvus', '1')->get();
 		} else if($standartas == 4){
-			$automobiliai = Automobilis::where('standartas', 'like', 'euro4')->where('aktyvus', '1')->get();
-		} else if($standartas == 5){
-			$automobiliai = Automobilis::where('standartas', 'like', 'euro5')->where('aktyvus', '1')->get();
+			$automobiliai = Automobilis::where('standartas', 'like', 'Euro 4')->where('aktyvus', '1')->get();
+		} else if ($standartas == 5){
+			$automobiliai = Automobilis::where('standartas', 'like', 'Euro 5')->where('aktyvus', '1')->get();
+		} else if ($standartas == 6){
+			$automobiliai = Automobilis::where('standartas', 'like', 'Euro 6')->where('aktyvus', '1')->get();
 		} else {
 			$automobiliai = Automobilis::where('aktyvus', '1')->get();
 		}
@@ -173,14 +176,6 @@ class AutomobiliaiController extends Controller
 
 		$automobiliai = Automobilis::most_expensive_greitai_all()->slice($start, 9);
 		return $automobiliai;
-	}
-
-	public function isLocaleLt(){
-		if(LaravelLocalization::getCurrentLocale() == 'lt'){
-			return true;
-		} else {
-			return false;
-		}
 	}
 
 	public function totalPages($count){

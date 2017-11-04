@@ -26,7 +26,7 @@
                     <div class="caption-tags caption" data-y="400" data-speed="700" data-start="1800" data-easing="easeOutBack">
                         <ul class="tag clearfix">
                             <li>{{ Carbon\Carbon::parse($brangiausiasAuto->pirmos_reg_data)->year}}</li>
-                            <li>{{explode('(', $brangiausiasAuto->variklis)[0]}}</li>
+                            <li>{{number_format($brangiausiasAuto->darbinis_turis / 1000, 1)}}L</li>
                             <li>{{\App\Helpers\LanguageHelper::kuroTipas($brangiausiasAuto)}}</li>
                             <li>{{\App\Helpers\LanguageHelper::pavaruDeze($brangiausiasAuto)}}</li>
                             <li class="tag-price">
@@ -108,7 +108,7 @@
                                     <div class="car-tags">
                                         <ul class="clearfix">
                                             <li>{{ Carbon\Carbon::parse($auto->pirmos_reg_data)->year}}</li>
-                                            <li>{{explode('(', $auto->variklis)[0]}}</li>
+                                            <li>{{number_format($auto->darbinis_turis / 1000, 1)}}L</li>
                                             <li>{{\App\Helpers\LanguageHelper::kuroTipas($auto)}}</li>
                                             <li>{{\App\Helpers\LanguageHelper::pavaruDeze($auto)}}</li>
                                             @if(!empty ($auto->rida))

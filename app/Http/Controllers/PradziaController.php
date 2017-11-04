@@ -15,13 +15,12 @@ use Illuminate\Support\Facades\Auth;
 class PradziaController extends Controller
 {
 	public function index(){
-		$isLocaleLt = self::isLocaleLt();
 		$brangiausiasAuto = Automobilis::brangiausias();
 		$naujausi = Automobilis::latest_cars();
 		$nuotraukosTitulinio = self::nuotraukos($brangiausiasAuto->id);
 		$aktyviosMarkes = self::aktyviosMarkes();
 
-		return View::make('pradzia', compact('brangiausiasAuto', 'nuotraukosTitulinio', 'isLocaleLt', 'naujausi', 'aktyviosMarkes'));
+		return View::make('pradzia', compact('brangiausiasAuto', 'nuotraukosTitulinio', 'naujausi', 'aktyviosMarkes'));
 	}
 
 	public function nuotraukos($id){
@@ -31,14 +30,6 @@ class PradziaController extends Controller
 		}
 
 		return $nuotraukos;
-	}
-
-	public function isLocaleLt(){
-		if(LaravelLocalization::getCurrentLocale() == 'lt'){
-			return true;
-		} else {
-			return false;
-		}
 	}
 
 	public function aktyviosMarkes(){

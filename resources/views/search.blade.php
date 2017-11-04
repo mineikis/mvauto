@@ -92,10 +92,12 @@
                                     <div class="select-input">
                                         <select name="forma" onchange="location = this.value;">
                                             <option value="" selected="selected">@lang('labels.standartas')</option>
+                                            <option value="\automobiliai\standartas\1">Euro 1</option>
                                             <option value="\automobiliai\standartas\2">Euro 2</option>
                                             <option value="\automobiliai\standartas\3">Euro 3</option>
                                             <option value="\automobiliai\standartas\4">Euro 4</option>
                                             <option value="\automobiliai\standartas\5">Euro 5</option>
+                                            <option value="\automobiliai\standartas\6">Euro 6</option>
                                         </select>
                                     </div>
                                 </div>

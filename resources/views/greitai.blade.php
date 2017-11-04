@@ -80,7 +80,7 @@
                         <div class="car-tags">
                             <ul class="clearfix">
                                 <li>{{ Carbon\Carbon::parse($auto->pirmos_reg_data)->year}}</li>
-                                <li>{{explode('(', $auto->variklis)[0]}}</li>
+                                <li>{{number_format($auto->darbinis_turis / 1000, 1)}}L</li>
                                 <li>{{\App\Helpers\LanguageHelper::kuroTipas($auto)}}</li>
                                 <li>{{\App\Helpers\LanguageHelper::pavaruDeze($auto)}}</li>
                                 @if(!empty ($auto->rida))
