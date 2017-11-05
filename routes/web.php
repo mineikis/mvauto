@@ -42,4 +42,7 @@ Route::group( ['middleware' => 'auth' ], function(){
 	Route::get('admin', 'AdminController@index');
 	Route::get('admin/parduota/{id}', 'AdminController@destroy');
 	Route::get('admin/lietuvoj/{id}', 'AdminController@grizoILietuva');
+	Route::get('create', 'AutomobilisController@create');
+	Route::post('store', 'AutomobilisController@store');
+	Route::post('marke', 'AutomobilisController@issaugotiMarke');
 });

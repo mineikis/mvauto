@@ -6,7 +6,7 @@
                     <div class="row">
                         <div class="six columns">
                             <div class="copyrights">
-                                <p>&copy; {{Config::get('constants.teises')}}</p>
+                                <p>&copy; {{Config::get('constants.teises')}} - {{date("Y")}}</p>
                             </div>
                         </div>
                         <div class="six columns">
@@ -18,7 +18,7 @@
                                  </li>
                                  <li><a href="/greitai/1">@lang('labels.greitai')</a> 
                                  </li>
-                                 <li><a href="/kontaktai">@lang('labels.kontaktai')</a> 
+                                 <li><a href="/kontaktai">@lang('labels.kontaktai')</a>
                                  </li>
                              </ul>
                          </div>

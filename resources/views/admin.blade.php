@@ -8,7 +8,7 @@
 <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
 @stop
 <div class="content">
-    <div class="button-wrap"> <a href="#" class="big button light" data-appear-animation="flipInX">Naujas</a> </div>
+    <div class="button-wrap"> <a href="create" class="big button light" data-appear-animation="flipInX">Naujas</a> </div>
     <div class="container">
     @foreach($aktyvus as $auto)
     <div class="row row-container">

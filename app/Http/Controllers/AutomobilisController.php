@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use View;
 use LaravelLocalization;
 use App\Automobilis;
+use App\Marke;
+use App\Modelis;
 
 class AutomobilisController extends Controller
 {
@@ -27,4 +29,32 @@ class AutomobilisController extends Controller
 		return $nuotraukos;
 	}
 
+	public function create(){
+		$markes = Marke::orderBy('pavadinimas')->pluck('pavadinimas', 'id');
+		$models = Modelis::orderBy('pavadinimas')->select('pavadinimas', 'kita', 'id')->get();
+		foreach($models as $model){
+			$model['pav'] = $model->pavadinimas .' '.$model->kita;
+		}
+		$modelis = $models->pluck('pav', 'id');
+
+        return View::make('create', compact('markes', 'modelis'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request){
+		dd($request["marke"]);
+    }
+
+	public function issaugotiMarke(Request $request){
+		$marke = new Marke();
+		$marke->pavadinimas = $request->input('naujaMarke');
+		$marke->save();
+
+		return response()->json($marke);
+    }
 }
