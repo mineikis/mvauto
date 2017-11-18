@@ -45,4 +45,7 @@ Route::group( ['middleware' => 'auth' ], function(){
 	Route::get('create', 'AutomobilisController@create');
 	Route::post('store', 'AutomobilisController@store');
 	Route::post('marke', 'AutomobilisController@issaugotiMarke');
+	Route::post('modelis', 'AutomobilisController@issaugotiModeli');
+	Route::post('spalva', 'AutomobilisController@issaugotiSpalva');
+	Route::post('salis', 'AutomobilisController@issaugotiPirmosRegSali');
 });

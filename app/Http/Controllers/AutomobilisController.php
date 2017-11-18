@@ -8,6 +8,13 @@ use LaravelLocalization;
 use App\Automobilis;
 use App\Marke;
 use App\Modelis;
+use App\Spalva;
+use App\KebuloTipas;
+use App\KuroTipas;
+use App\PavaruDeze;
+use App\VarantiejiRatai;
+use App\PirmosRegSalis;
+use App\KlimatoKontrole;
 
 class AutomobilisController extends Controller
 {
@@ -32,12 +39,20 @@ class AutomobilisController extends Controller
 	public function create(){
 		$markes = Marke::orderBy('pavadinimas')->pluck('pavadinimas', 'id');
 		$models = Modelis::orderBy('pavadinimas')->select('pavadinimas', 'kita', 'id')->get();
+		$kebuloTipai = KebuloTipas::pluck('pavadinimas_lt', 'id');
+		$spalvos = Spalva::orderBy('pavadinimas_lt')->pluck('pavadinimas_lt', 'id');
+		$kuroTipai = KuroTipas::orderBy('pavadinimas_lt')->pluck('pavadinimas_lt', 'id');
+		$pavaruDezes = PavaruDeze::orderBy('pavadinimas_lt')->pluck('pavadinimas_lt', 'id');
+		$varantiejiRatai = VarantiejiRatai::orderBy('pavadinimas_lt')->pluck('pavadinimas_lt', 'id');
+		$pirmosRegSalis = PirmosRegSalis::orderBy('pavadinimas_lt')->pluck('pavadinimas_lt', 'id');
+		$klimatoValdymas = KlimatoKontrole::pluck('pavadinimas_lt', 'id');
+
 		foreach($models as $model){
 			$model['pav'] = $model->pavadinimas .' '.$model->kita;
 		}
 		$modelis = $models->pluck('pav', 'id');
 
-        return View::make('create', compact('markes', 'modelis'));
+        return View::make('create', compact('markes', 'modelis', 'kebuloTipai', 'spalvos', 'kuroTipai', 'pavaruDezes', 'varantiejiRatai', 'pirmosRegSalis', 'klimatoValdymas'));
     }
 
     /**
@@ -47,7 +62,7 @@ class AutomobilisController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-		dd($request["marke"]);
+		dd($request);
     }
 
 	public function issaugotiMarke(Request $request){
@@ -56,5 +71,36 @@ class AutomobilisController extends Controller
 		$marke->save();
 
 		return response()->json($marke);
-    }
+	}
+	
+	public function issaugotiModeli(Request $request){
+		$modelis = new Modelis();
+		$modelis->pavadinimas = $request->input('naujasModelis');
+		$modelis->kita = $request->input('kita');
+		$modelis->marke_id = $request->input('markesModelis');
+		$modelis->save();
+
+		return response()->json($modelis);
+	}
+
+	public function issaugotiSpalva(Request $request){
+		$spalva = new Spalva();
+		$spalva->pavadinimas_lt = $request->input('naujaSpalvaLt');
+		$spalva->pavadinimas_ru = $request->input('naujaSpalvaRu');
+		$spalva->pavadinimas_en = $request->input('naujaSpalvaEn');
+		$spalva->save();
+
+		return response()->json($spalva);
+	}
+
+
+	public function issaugotiPirmosRegSali(Request $request){
+		$salis = new Spalva();
+		$salis->pavadinimas_lt = $request->input('naujaSalisLt');
+		$salis->pavadinimas_ru = $request->input('naujaSalisRu');
+		$salis->pavadinimas_en = $request->input('naujaSalisEn');
+		$salis->save();
+
+		return response()->json($salis);
+	}
 }
