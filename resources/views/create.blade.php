@@ -146,6 +146,20 @@
             </div>
         </div>
         <!-- privalumai 2 END-->
+ 
+        <div class="row">
+            <div class="six columns">
+                <div class="input">
+                    <input name="darbinis_turis" type="number" placeholder="Darbinis tūris (cm³) pvz: 1300" step="1"  max="10000"></input>
+                </div>
+            </div>
+            <div class="six columns">
+                <div class="checkbox">
+                    <input id="pranc" type="checkbox" name="prancuzijoje" value="1">
+                    <label for="pranc">Dar Prancūzijoje</label>
+                </div>
+            </div>
+        </div>
 
         <!-- kuro sanaudos, rida -->
         <div class="row">
@@ -199,7 +213,7 @@
                     <input name="kaina" type="number" placeholder="Kaina" step="1" max="200000" required></input>
                 </div>
             </div>
-        <div>
+        </div>
         <!-- Kaina End -->
         
         <!-- Komentaras LT -->
@@ -209,7 +223,7 @@
                     <textarea name="komentaras_lt" placeholder="Komenataras lt"></textarea>
                 </div>
             </div>
-        <div>
+        </div>
         <!-- Komentaras LT End -->
 
         <!-- Komentaras RU -->
@@ -219,7 +233,7 @@
                     <textarea name="komentaras_ru" placeholder="Komenataras ru"></textarea>
                 </div>
             </div>
-        <div>
+        </div>
         <!-- Komentaras RU End -->
 
         <!-- Komentaras EN -->
@@ -229,8 +243,17 @@
                     <textarea name="komentaras_en" placeholder="Komenataras en"></textarea>
                 </div>
             </div>
-        <div>
+        </div>
         <!-- Komentaras EN End -->
+
+        <div class="row">
+            <div class="twelve columns alpha">
+                <div class="input-submit">
+                    <input name="files[]" type="file" multiple required></input>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="input-submit">
                 <p> {!! Form::submit('Išsaugoti') !!} </p>
