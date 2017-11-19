@@ -113,6 +113,40 @@
         </div>
         <!-- Euro standartas, varantieji ratai, klimato valdymas, pirmos reg salis END-->
 
+        <!-- privalumai 1-->
+        <div class="row" style="margin:10px 0px 10px 0px">
+            <div class="three columns">
+                {!! Form::select('apsauga[]', $apsaugaPriv, 'null', ['id' => 'apsauga', 'multiple', 'class'=>'selectpicker', "data-live-search" => "true", "title"=>"Apsauga"])!!}
+            </div>
+            <div class="three columns">
+                {!! Form::select('saugumas[]', $saugumasPriv, 'null', ['id' => 'saugumas', 'multiple', 'class'=>'selectpicker', "data-live-search" => "true", "title"=>"Saugumas"])!!}
+            </div>
+            <div class="three columns">
+                {!! Form::select('eksterjeras[]', $eksterjerasPriv, 'null', ['id' => 'eksterjeras', 'multiple', 'class'=>'selectpicker', "data-live-search" => "true", "title"=>"Eksterjeras"])!!}
+            </div>
+            <div class="three columns">
+                {!! Form::select('salonas[]', $salonasPriv, 'null', ['id' => 'salonas', 'multiple', 'class'=>'selectpicker', "data-live-search" => "true", "title"=>"Salonas"])!!}
+            </div>
+        </div>
+        <!-- privalumai 1 END-->
+
+        <!-- privalumai 2-->
+        <div class="row" style="margin:10px 0px 10px 0px">
+            <div class="three columns">
+                {!! Form::select('av[]', $avPriv, 'null', ['id' => 'av', 'multiple', 'class'=>'selectpicker', "data-live-search" => "true", "title"=>"Audio/Video"])!!}
+            </div>
+            <div class="three columns">
+                {!! Form::select('elektronika[]', $elektronikaPriv, 'null', ['id' => 'elektronika', 'multiple', 'class'=>'selectpicker', "data-live-search" => "true", "title"=>"Elektronika"])!!}
+            </div>
+            <div class="three columns">
+                {!! Form::select('tiuningas[]', $tiuningasPriv, 'null', ['id' => 'tiuningas', 'multiple', 'class'=>'selectpicker', "data-live-search" => "true", "title"=>"Tiuningas"])!!}
+            </div>
+            <div class="three columns">
+                {!! Form::select('kita[]', $kitaPriv, 'null', ['id' => 'kita', 'multiple', 'class'=>'selectpicker', "data-live-search" => "true", "title"=>"Kita"])!!}
+            </div>
+        </div>
+        <!-- privalumai 2 END-->
+
         <!-- kuro sanaudos, rida -->
         <div class="row">
             <div class="three columns alpha">
@@ -138,7 +172,7 @@
         </div>
         <!-- kuro sanaudos, rida END -->
 
-        <!-- kuro sanaudos, rida -->
+        <!-- galia, ratlankiaim vin -->
         <div class="row">
             <div class="four columns alpha">
                 <div class="input">
@@ -156,7 +190,7 @@
                 </div>
             </div>
         </div>
-        <!-- kuro sanaudos, rida END -->
+        <!-- galia, ratlankiaim vin END-->
 
         <!-- Kaina -->
         <div class="row">
@@ -197,9 +231,10 @@
             </div>
         <div>
         <!-- Komentaras EN End -->
-
-        <div class="input-submit">
-            <p> {!! Form::submit('Išsaugoti') !!} </p>
+        <div class="row">
+            <div class="input-submit">
+                <p> {!! Form::submit('Išsaugoti') !!} </p>
+            </div>
         </div>
     </div>
     {!! Form::close() !!}

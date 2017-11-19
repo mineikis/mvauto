@@ -15,6 +15,14 @@ use App\PavaruDeze;
 use App\VarantiejiRatai;
 use App\PirmosRegSalis;
 use App\KlimatoKontrole;
+use App\PrivApsauga;
+use App\PrivSalonas;
+use App\PrivSaugumas;
+use App\PrivEksterjeras;
+use App\PrivAv;
+use App\PrivElektronika;
+use App\PrivTiuningas;
+use App\PrivKita;
 
 class AutomobilisController extends Controller
 {
@@ -46,13 +54,23 @@ class AutomobilisController extends Controller
 		$varantiejiRatai = VarantiejiRatai::orderBy('pavadinimas_lt')->pluck('pavadinimas_lt', 'id');
 		$pirmosRegSalis = PirmosRegSalis::orderBy('pavadinimas_lt')->pluck('pavadinimas_lt', 'id');
 		$klimatoValdymas = KlimatoKontrole::pluck('pavadinimas_lt', 'id');
+		$apsaugaPriv = PrivApsauga::orderBy('pavadinimas_lt')->pluck('pavadinimas_lt', 'id');
+		$saugumasPriv = PrivSaugumas::orderBy('pavadinimas_lt')->pluck('pavadinimas_lt', 'id');
+		$salonasPriv = PrivSalonas::orderBy('pavadinimas_lt')->pluck('pavadinimas_lt', 'id');
+		$eksterjerasPriv = PrivEksterjeras::orderBy('pavadinimas_lt')->pluck('pavadinimas_lt', 'id');
+		$avPriv = PrivAv::orderBy('pavadinimas_lt')->pluck('pavadinimas_lt', 'id');
+		$elektronikaPriv = PrivElektronika::orderBy('pavadinimas_lt')->pluck('pavadinimas_lt', 'id');
+		$kitaPriv = PrivKita::orderBy('pavadinimas_lt')->pluck('pavadinimas_lt', 'id');
+		$tiuningasPriv = PrivTiuningas::orderBy('pavadinimas_lt')->pluck('pavadinimas_lt', 'id');
 
 		foreach($models as $model){
 			$model['pav'] = $model->pavadinimas .' '.$model->kita;
 		}
 		$modelis = $models->pluck('pav', 'id');
 
-        return View::make('create', compact('markes', 'modelis', 'kebuloTipai', 'spalvos', 'kuroTipai', 'pavaruDezes', 'varantiejiRatai', 'pirmosRegSalis', 'klimatoValdymas'));
+		return View::make('create', compact('markes', 'modelis', 'kebuloTipai', 'spalvos', 'kuroTipai', 
+		'pavaruDezes', 'varantiejiRatai', 'pirmosRegSalis', 'klimatoValdymas', 'apsaugaPriv', 'apsaugaPriv',
+		'saugumasPriv', 'salonasPriv', 'eksterjerasPriv', 'kitaPriv', 'elektronikaPriv', 'avPriv', 'tiuningasPriv' ));
     }
 
     /**
