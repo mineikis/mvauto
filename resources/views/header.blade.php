@@ -16,7 +16,7 @@
                     @guest
                     @else
                     <div class="social">
-                    <a rel="alternate" class="tip-below success" href="logout">Logout</a>
+                    <a rel="alternate" class="tip-below success" href="/logout">Logout</a>
                     </div>
                     @endguest
                 </div>

@@ -32,7 +32,7 @@
             <div class="vcenter"><a href="/admin/parduota/{{$auto->id}}" onclick="return confirm('Tikrai tikrai istrinti??? :)')">Parduota</a></div>
         </div>
         <div class="col-md-1">
-            <div class="vcenter"><a href="/admin">Redaguoti</a></div>
+            <div class="vcenter"><a href="/admin/redaguoti/{{$auto->id}}">Redaguoti</a></div>
         </div>
     </div>
     <hr style="height:1px;border:none;color:#333;background-color:#333;">

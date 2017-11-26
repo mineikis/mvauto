@@ -38,15 +38,6 @@ class AutomobilisController extends Controller
         return View::make('automobilis', compact('automobilis', 'nuotraukos', 'reklama', 'arklioGalia'));
     }
 
-    public function nuotraukos($id){
-        $nuotraukos = array();
-        foreach (glob(public_path().'/images/'.$id.'/*.jpg') as $file) {
-            $nuotraukos[] = basename($file);
-        }
-
-        return $nuotraukos;
-    }
-
     public function create(){
         $markes = Marke::orderBy('pavadinimas')->pluck('pavadinimas', 'id');
         $models = Modelis::orderBy('pavadinimas')->select('pavadinimas', 'kita', 'id')->get();
@@ -76,12 +67,6 @@ class AutomobilisController extends Controller
         'saugumasPriv', 'salonasPriv', 'eksterjerasPriv', 'kitaPriv', 'elektronikaPriv', 'avPriv', 'tiuningasPriv' ));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $automobilis = new Automobilis();
@@ -177,6 +162,15 @@ class AutomobilisController extends Controller
 		return redirect()->intended('admin');
     }
 
+    public function nuotraukos($id){
+        $nuotraukos = array();
+        foreach (glob(public_path().'/images/'.$id.'/*.jpg') as $file) {
+            $nuotraukos[] = basename($file);
+        }
+
+        return $nuotraukos;
+    }
+
     public function issaugotiNuotraukas($files, $id)
     {
         foreach ($files as $file) {
@@ -213,7 +207,6 @@ class AutomobilisController extends Controller
 
         return response()->json($spalva);
     }
-
 
     public function issaugotiPirmosRegSali(Request $request){
         $salis = new Spalva();

@@ -40,10 +40,13 @@ Route::post('authenticate', 'PradziaController@doLogin');
 
 Route::group( ['middleware' => 'auth' ], function(){
 	Route::get('admin', 'AdminController@index');
+	Route::get('admin/redaguoti/{id}', 'AdminController@show');
 	Route::get('admin/parduota/{id}', 'AdminController@destroy');
+	Route::get('admin/{id}/{nuotrauka}', 'AdminController@istrintiFoto');
 	Route::get('admin/lietuvoj/{id}', 'AdminController@grizoILietuva');
 	Route::get('create', 'AutomobilisController@create');
 	Route::post('store', 'AutomobilisController@store');
+	Route::put('update/{id}', 'AdminController@update')->name('auto.update');
 	Route::post('marke', 'AutomobilisController@issaugotiMarke');
 	Route::post('modelis', 'AutomobilisController@issaugotiModeli');
 	Route::post('spalva', 'AutomobilisController@issaugotiSpalva');
