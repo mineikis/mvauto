@@ -3,6 +3,7 @@
 @section('styles')
 <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/dropzone.css') }}">
 @stop
 @section('scripts')
 <script type="text/javascript" src="{{ URL::asset('js/bootstrap.js') }}"></script>
@@ -11,7 +12,6 @@
 @stop
 <section class="space-top-and-bottom medium">
     <div class="container">
-    {{--  {!! Form::open(array('url' => 'store', 'files' => true)) !!}  --}}
     {!! Form::model($auto, array('route' => array('auto.update', $auto->id), 'method' => 'PUT')) !!}
     <!-- modelis, marke, pagaminimo metai ir menuo -->
         <div class="row" style="margin:10px 0px 10px 0px">
@@ -291,26 +291,17 @@
             @endforeach
         </div>
         @endforeach
-        
-        <div class="row">
-            <div class="twelve columns alpha">
-                <h6>Pridėti daugiau foto. Bent viena nuotrauka turi būti pavadinta "1.jpg". Negali būti vienodų pavadinimimų.</h6>
-                <div class="input-submit">
-                    <input name="files[]" type="file" multiple></input>
-                </div>
-            </div>
-        </div>
 
         <div class="row">
             <div class="input-submit">
                 <p> {!! Form::submit('Išsaugoti') !!} </p>
             </div>
         </div>
-    </div>
+        {!! Form::close() !!}
+        
+    {!! Form::open(array('url' => 'admin/upload/'.$auto->id, 'class'=>'dropzone', 'id' => 'fileUpload')) !!}
     {!! Form::close() !!}
     </div>
-    </div>
-
 <!-- **************************** MODALS ***********************************-->
 
 <!-- Pirmos Reg salis -->
@@ -428,7 +419,7 @@
                 {!! Form::button('Išsaugoti', array('id' => 'saveModelis', 'class'=>'btn btn-primary')) !!} </p>
             </div>
             {!! Form::close() !!}
-        </div>
+        </div> 
     </div>
 </div>
 <!-- MODELIS END -->
@@ -436,7 +427,15 @@
 @endsection
 
 <script type="text/javascript" src="{{ URL::asset('https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/dropzone.js') }}"></script>
 <script>
+    Dropzone.options.fileUpload = {
+        acceptedFiles: ".jpg",
+        paramName: "file",
+        autoQueue: true,
+        dictDefaultMessage: "Pridėti papildomų nuotraukų"
+    };
+
     $(document).ready(function(){
     
     $('#saveMarke').click(function( event ) {

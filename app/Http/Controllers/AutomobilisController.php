@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use File;
 use View;
 use LaravelLocalization;
 use Illuminate\Support\Facades\Input;
@@ -39,6 +40,7 @@ class AutomobilisController extends Controller
     }
 
     public function create(){
+        File::deleteDirectory('images/temp/');
         $markes = Marke::orderBy('pavadinimas')->pluck('pavadinimas', 'id');
         $models = Modelis::orderBy('pavadinimas')->select('pavadinimas', 'kita', 'id')->get();
         $kebuloTipai = KebuloTipas::pluck('pavadinimas_lt', 'id');
@@ -156,9 +158,10 @@ class AutomobilisController extends Controller
 		}
 	}
 
-		$files = Input::file('files');
-		self::issaugotiNuotraukas($files, $automobilis->id);
-
+        if (file_exists('images/temp')){
+            rename('images/temp', 'images/'.$automobilis->id);
+        }
+        
 		return redirect()->intended('admin');
     }
 

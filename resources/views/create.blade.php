@@ -3,6 +3,7 @@
 @section('styles')
 <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/dropzone.css') }}">
 @stop
 @section('scripts')
 <script type="text/javascript" src="{{ URL::asset('js/bootstrap.js') }}"></script>
@@ -11,6 +12,9 @@
 @stop
 <section class="space-top-and-bottom medium">
     <div class="container">
+    {!! Form::open(array('url' => 'admin/upload', 'class'=>'dropzone', 'id' => 'fileUpload')) !!}
+    {!! Form::close() !!}
+
     {!! Form::open(array('url' => 'store', 'files' => true)) !!}
     <!-- modelis, marke, pagaminimo metai ir menuo -->
         <div class="row" style="margin:10px 0px 10px 0px">
@@ -247,14 +251,6 @@
         <!-- Komentaras EN End -->
 
         <div class="row">
-            <div class="twelve columns alpha">
-                <div class="input-submit">
-                    <input name="files[]" type="file" multiple required></input>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
             <div class="input-submit">
                 <p> {!! Form::submit('Išsaugoti') !!} </p>
             </div>
@@ -389,7 +385,14 @@
 @endsection
 
 <script type="text/javascript" src="{{ URL::asset('https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/dropzone.js') }}"></script>
 <script>
+    Dropzone.options.fileUpload = {
+        acceptedFiles: ".jpg",
+        paramName: "file",
+        autoQueue: true,
+        dictDefaultMessage: "Įkelti nuotraukas. Viena foto turi būti pavadinta '1.jpg'"
+    };
     $(document).ready(function(){
     
     $('#saveMarke').click(function( event ) {

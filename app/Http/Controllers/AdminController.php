@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Response;
 use View;
 use LaravelLocalization;
 use Carbon\Carbon;
@@ -52,6 +53,33 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         //
+    }
+
+    public function upload(Request $request, $id){
+        $file = Input::file('file');
+        $destinationPath = 'images/'.$id;
+        $filename = $file->getClientOriginalName();
+        $upload_success = Input::file('file')->move($destinationPath, $filename);
+        
+        if($upload_success) {
+           return Response::json('success', 200);
+        } else {
+           return Response::json('error', 400);
+        }
+    }
+
+    public function uploadNew(Request $request){
+        $file = Input::file('file');
+        $destinationPath = 'images/temp/';
+        // $success = File::deleteDirectory($destinationPath);
+        $filename = $file->getClientOriginalName();
+        $upload_success = Input::file('file')->move($destinationPath, $filename);
+        
+        if($upload_success) {
+            return Response::json('success', 200);
+        } else {
+            return Response::json('error', 400);
+        }
     }
 
     public function show($id){
