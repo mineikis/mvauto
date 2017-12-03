@@ -2,34 +2,19 @@
 <html lang="lt">
 
 <head>
-
-    <!-- Meta Tags
-    ================================================== -->
     <meta charset="utf-8">
     <meta name="description" content="MVAuto - Naudoti automobiliai">
     <meta name="keywords" content="naudoti, automobiliai, automobilis, pirkti, parduoti, parduodamas" />
     <meta name="author" content="Karolis Mineikis">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Site Title
-    ================================================== -->
     <title>@lang('labels.title')</title>
 
-    <!-- Mobile Specific Metas
-    ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- CSS
-    ================================================== -->
     @yield('styles')
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
 
-    <!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
-    <!-- Favicon
-    ================================================== -->
     <link rel="shortcut icon" href="{{ URL::asset('images/favicon.ico') }}" type="image/x-icon">
 
     <!-- Google Analytics
@@ -59,25 +44,13 @@
   @section('footer')
   @include('footer')
   @show
-  
 
+    <div class="to-top">
+        <a href="#">
+            <span class="icon-arrow-up"></span>
+        </a>
+    </div>
 
-  <!-- ================================================== TO TOP ================================================== -->
-  <div class="to-top">
-    <a href="#">
-        <span class="icon-arrow-up"></span>
-    </a>
-</div>
-<!-- ================================================== TO TOP ================================================== -->
-<script>
-$.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
-</script>
-    <!-- Javascript
-    ================================================== -->
     <script type="text/javascript" src="{{ URL::asset('http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('https://maps.googleapis.com/maps/api/js?key=AIzaSyA7iZeCdciPksBYdMethLvkHLQqT3eSshE') }}"></script>
@@ -92,9 +65,14 @@ $.ajaxSetup({
     <script type="text/javascript" src="{{ URL::asset('js/retina-1.1.0.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/jquery.mapmarker.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/custom.js') }}"></script>
-    @yield('scripts')
-    <!-- End Document
-    ================================================== -->
-</body>
 
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
+    @yield('scripts')
+</body>
 </html>
