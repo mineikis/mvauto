@@ -53,4 +53,5 @@ Route::group( ['middleware' => 'auth' ], function(){
 	Route::post('modelis', 'AutomobilisController@issaugotiModeli');
 	Route::post('spalva', 'AutomobilisController@issaugotiSpalva');
 	Route::post('salis', 'AutomobilisController@issaugotiPirmosRegSali');
+	Route::post('/delete', 'AutomobilisController@deleteAllPhotos');
 });

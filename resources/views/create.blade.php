@@ -403,6 +403,10 @@
             data: $('form').serialize(),
             dataType: 'json',
             success: function( _response ){
+                $('#markesModeliui').append('<option value="'+ _response.id +'">'+ _response.pavadinimas +'</option>');
+                $('#markesModeliui').selectpicker('refresh');
+                $('#markesModeliui').selectpicker('val', _response.id);
+                
                 $('#marke').append('<option value="'+ _response.id +'">'+ _response.pavadinimas +'</option>');
                 $('#marke').selectpicker('refresh');
                 $('#marke').selectpicker('val', _response.id);

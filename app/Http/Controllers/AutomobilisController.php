@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Response;
 use File;
 use View;
 use LaravelLocalization;
@@ -189,6 +190,12 @@ class AutomobilisController extends Controller
         $marke->save();
 
         return response()->json($marke);
+    }
+
+    public function deleteAllPhotos(Request $request){
+        $success = File::deleteDirectory('images/1');
+        
+        return response()->json($success);
     }
     
     public function issaugotiModeli(Request $request){

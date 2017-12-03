@@ -9,6 +9,7 @@
     <meta name="description" content="MVAuto - Naudoti automobiliai">
     <meta name="keywords" content="naudoti, automobiliai, automobilis, pirkti, parduoti, parduodamas" />
     <meta name="author" content="Karolis Mineikis">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Site Title
     ================================================== -->
@@ -68,7 +69,13 @@
     </a>
 </div>
 <!-- ================================================== TO TOP ================================================== -->
-
+<script>
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+</script>
     <!-- Javascript
     ================================================== -->
     <script type="text/javascript" src="{{ URL::asset('http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}"></script>
