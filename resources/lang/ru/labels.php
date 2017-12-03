@@ -41,7 +41,7 @@ return [
 
 //automobilis
 'papildoma_info' => 'ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ',
-'detales' => 'ЧАСТЕЙ',
+'detales' => 'OCHOBHЫE CBEДEHИЯ',
 'iranga' => 'ОБОРУДОВАНИЕ',
 'daugiau' => 'БОЛЬШЕ',
 'spalva' => 'Цвет',

@@ -71,7 +71,7 @@
 
                         <!-- title -->
                         <div class="car-title">
-                            <h3><a href="#">{{$auto->modelis->marke->pavadinimas}} {{$auto->modelis->pavadinimas}}</a>
+                            <h3><a href="/automobilis/{{$auto->id}}">{{$auto->modelis->marke->pavadinimas}} {{$auto->modelis->pavadinimas}}</a>
                             </h3>
                         </div>
                         <!-- .title -->

@@ -114,10 +114,9 @@
                                 <div class="four columns" data-appear-animation="bounceIn">
                                     <div class="horizontal-tab clearfix">
                                         <div class="h-tab">
-                                            <ul class="resp-tabs-list clearfix">
-                                                <li>@lang('labels.detales')</li>
-                                                <li>@lang('labels.daugiau')</li>
-                                            </ul>
+                                        <div class="inline-promo-heading">
+                                            <p>@lang('labels.detales')</p>
+                                        </div>
                                             <div class="resp-tabs-container">
                                                 <div>
                                                     <ul class="tab-list">
@@ -167,11 +166,6 @@
                                                             <span> <b>{{\App\Helpers\LanguageHelper::pavaruDeze($automobilis)}}</b> 
                                                             </span>
                                                         </li>
-                                                    </ul>
-                                                </div>
-
-                                                <div>
-                                                    <ul class="tab-list">
                                                         @if(!empty ($automobilis->standartas))
                                                         <li>@lang('labels.euro_standartas'):
                                                             <span> <b>{{ $automobilis->standartas}}</b> 
