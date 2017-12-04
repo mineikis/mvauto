@@ -171,6 +171,7 @@ class AutomobilisController extends Controller
         foreach (glob(public_path().'/images/'.$id.'/*.jpg') as $file) {
             $nuotraukos[] = basename($file);
         }
+        natsort($nuotraukos);
 
         return $nuotraukos;
     }
@@ -193,7 +194,7 @@ class AutomobilisController extends Controller
     }
 
     public function deleteAllPhotos(Request $request){
-        $success = File::deleteDirectory('images/1');
+        $success = File::deleteDirectory('images/'.$request->input('id'));
         
         return response()->json($success);
     }

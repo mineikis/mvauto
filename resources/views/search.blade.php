@@ -45,7 +45,9 @@
                         <!-- quick search fields -->
                         <div class="quick-search-fields" data-appear-animation="slideInLeft">
                             <div class="ten columns clearfix">
-
+                                <!-- select input -->
+                                <div class="two columns">
+                                </div>
                                 <!-- select input -->
                                 <div class="two columns">
                                     <div class="select-input">

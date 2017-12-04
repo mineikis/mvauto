@@ -118,7 +118,8 @@ class AdminController extends Controller
 		$nuotraukos = array();
 		foreach (glob(public_path().'/images/'.$id.'/*.jpg') as $file) {
 			$nuotraukos[] = basename($file);
-		}
+        }
+        natsort($nuotraukos);
 
 		return $nuotraukos;
 	}
