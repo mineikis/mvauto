@@ -2,6 +2,15 @@
 <html lang="lt">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110602435-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-110602435-1');
+    </script>
+
     <meta charset="utf-8">
     <meta name="description" content="MVAuto - Naudoti automobiliai">
     <meta name="keywords" content="naudoti, automobiliai, automobilis, pirkti, parduoti, parduodamas" />
@@ -19,7 +28,7 @@
 
     <!-- Google Analytics
     ================================================== -->
-    <script>
+    {{--  <script>
         var _gaq = [
         ['_setAccount', 'UA-XXXXX-X'],
         ['_trackPageview']
@@ -30,7 +39,7 @@
             g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g, s);
         }(document, 'script'));
-    </script>
+    </script>  --}}
 </head>
 
 <body>
