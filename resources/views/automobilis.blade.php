@@ -228,7 +228,7 @@
                                             <p>@lang('labels.papildoma_info')</p>
                                         </div>
                                         <div class="inline-promo-content">
-                                            <p>{{\App\Helpers\LanguageHelper::komentaras($automobilis)}}</p>
+                                            <p><pre style="white-space: pre-wrap; background: unset; color: unset; border-left: unset;">{{\App\Helpers\LanguageHelper::komentaras($automobilis)}}</pre></p>
                                         </div>
                                     </div>
                                 </div>
