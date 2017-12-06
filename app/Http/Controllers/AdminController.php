@@ -157,7 +157,11 @@ class AdminController extends Controller
         $automobilis->komentaras_lt = $request->input('komentaras_lt');
         $automobilis->komentaras_ru = $request->input('komentaras_ru');
         $automobilis->komentaras_en = $request->input('komentaras_en');
-		$automobilis->greitai = $request->input('greitai');
+        if(empty($request->input('greitai'))){
+            $automobilis->greitai = 0;
+        } else {
+            $automobilis->greitai = $request->input('greitai');
+        }
 		$automobilis->darbinis_turis = $request->input('darbinis_turis');
         $automobilis->save();
         
