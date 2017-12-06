@@ -281,7 +281,7 @@
                                 <h3 id="">{{ $nuotrauka }}</h3>
                             </div>
                             <div class="car-price" style="margin:4px">
-                                <a href="/admin/{{$auto->id}}/{{$nuotrauka}}" class="clearfix">
+                                <a id="{{$nuotrauka}}" class="clearfix image-delete">
                                     <span class="price">Ištrinti</span>
                                     <span class="icon-arrow-right2"></span>
                                 </a>
@@ -321,11 +321,32 @@
             data: data,
             dataType: 'json',
             success: function( _response ){
-                console.log("veikia");
                 $(".nuotraukos").remove();
             },
             error: function( _response ){
-                console.log("neveikia");
+            }
+        });
+    });
+
+    $('.image-delete').click(function( event ) {
+        var el = $(this);
+        var id = {{$auto->id}};
+        var name = this.id;
+        console.log(this.id);
+        var data = {
+            "_token": "{{ csrf_token() }}",
+            "id": id,
+            "name": name
+        }
+        $.ajax({
+            url: '/delete-image',
+            type: 'post',
+            data: data,
+            dataType: 'json',
+            success: function( _response ){
+                el.parent().parent().parent().remove();
+            },
+            error: function( _response ){
             }
         });
     });

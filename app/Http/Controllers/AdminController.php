@@ -124,10 +124,13 @@ class AdminController extends Controller
 		return $nuotraukos;
 	}
 
-    public function istrintiFoto($id, $nuotrauka){
-        $directory = public_path().'/images/'.$id.'/'.$nuotrauka;
-        $success = File::delete($directory);
-        return Redirect::back()->withInput(Input::all());
+    public function istrintiFoto(Request $request){
+        $id = $request->input('id');
+        $nuotrauka = $request->input('name');
+        $path = public_path().'/images/'.$id.'/'.$nuotrauka;
+        $success = File::delete($path);
+        
+        return response()->json($success);
     }
 
     public function update(Request $request, $id)
