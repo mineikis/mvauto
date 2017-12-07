@@ -68,6 +68,7 @@ return [
 'saugumas' => 'Safety',
 'tiuningas' => 'Tuning',
 'kiti_ypatumai' => 'Other',
+'pvm' => 'VAT',
 
 
 //kontaktai

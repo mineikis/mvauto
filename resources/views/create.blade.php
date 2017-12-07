@@ -152,12 +152,12 @@
         <!-- privalumai 2 END-->
  
         <div class="row">
-            <div class="six columns">
+            <div class="eight columns">
                 <div class="input">
                     <input name="darbinis_turis" type="number" placeholder="Darbinis tūris (cm³) pvz: 1300" step="1"  max="10000"></input>
                 </div>
             </div>
-            <div class="six columns">
+            <div class="four columns">
                 <div class="checkbox">
                     <input id="pranc" type="checkbox" name="prancuzijoje" value="1">
                     <label for="pranc">Dar Prancūzijoje</label>
@@ -212,9 +212,15 @@
 
         <!-- Kaina -->
         <div class="row">
-            <div class="twelve columns alpha">
+            <div class="eight columns alpha">
                 <div class="input">
                     <input name="kaina" type="number" placeholder="Kaina" step="1" max="200000" required></input>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="checkbox">
+                    <input id="pvm" type="checkbox" name="pvm" value="1">
+                    <label for="pvm">+ PVM</label>
                 </div>
             </div>
         </div>

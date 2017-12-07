@@ -94,11 +94,8 @@ class AutomobilisController extends Controller
         $automobilis->komentaras_lt = $request->input('komentaras_lt');
         $automobilis->komentaras_ru = $request->input('komentaras_ru');
         $automobilis->komentaras_en = $request->input('komentaras_en');
-        if(empty($request->input('prancuzijoje'))){
-            $automobilis->greitai = 0;
-        } else {
-            $automobilis->greitai = $request->input('prancuzijoje');
-        }
+        $automobilis->greitai = empty($request->input('prancuzijoje')) ? false : true;
+        $automobilis->pvm = empty($request->input('pvm')) ? false : true;
 		$automobilis->darbinis_turis = $request->input('darbinis_turis');
 		$automobilis->save();
 		

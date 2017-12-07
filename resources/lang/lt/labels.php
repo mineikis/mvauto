@@ -68,6 +68,7 @@ return [
 'saugumas' => 'Saugumas',
 'tiuningas' => 'Tiuningas',
 'kiti_ypatumai' => 'Kiti',
+'pvm' => 'PVM',
 
 
 //kontaktai

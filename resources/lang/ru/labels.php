@@ -68,6 +68,7 @@ return [
 'saugumas' => 'Безопасность',
 'tiuningas' => 'Тюнинг ',
 'kiti_ypatumai' => 'Другие',
+'pvm' => 'НДС',
 
 //kontaktai
 'vardas' => 'Имя',

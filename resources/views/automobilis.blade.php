@@ -25,7 +25,7 @@
                         <!-- car price -->
                         <div class="two columns" data-appear-animation="slideInRight">
                             <div class="single-car-price">
-                                <a href="#" class="button light medium"><b>{{$automobilis->kaina}} €</b> </a>
+                                <a href="#" class="button light medium"><b>{{$automobilis->kaina}} € @if($automobilis->pvm) +@lang('labels.pvm')@endif</b> </a>
                             </div>
                         </div>
                         <!-- .car price -->
@@ -121,7 +121,7 @@
                                                 <div>
                                                     <ul class="tab-list">
                                                     <li>@lang('labels.kaina'):
-                                                            <span> <b>{{$automobilis->kaina}} €</b> 
+                                                            <span> <b>{{$automobilis->kaina}} € @if($automobilis->pvm) +@lang('labels.pvm')@endif</b> 
                                                             </span>
                                                         </li>
                                                         <li>@lang('labels.marke'):
@@ -284,7 +284,7 @@
                                     <!-- price -->
                                     <div class="car-price">
                                         <a href="/automobilis/{{$auto->id}}" class="clearfix">
-                                            <span class="price">{{$auto->kaina}} €</span>
+                                            <span class="price">{{$auto->kaina}} € @if($auto->pvm) + @lang('labels.pvm')@endif</span>
                                             <span class="icon-arrow-right2"></span>
                                         </a>
                                     </div>

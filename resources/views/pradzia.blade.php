@@ -31,7 +31,7 @@
                             <li>{{\App\Helpers\LanguageHelper::pavaruDeze($brangiausiasAuto)}}</li>
                             <li class="tag-price">
                                 <a href="automobilis/{{$brangiausiasAuto->id}}" class="clearfix">
-                                    <span class="price"><b>{{$brangiausiasAuto->kaina}} €</b> 
+                                    <span class="price"><b>{{$brangiausiasAuto->kaina}} € @if($brangiausiasAuto->pvm) + @lang('labels.pvm')@endif</b> 
                                     </span>
                                     <span class="icon-arrow-right2"></span>
                                 </a>
@@ -121,7 +121,7 @@
                                     <!-- price -->
                                     <div class="car-price">
                                         <a href="automobilis/{{$auto->id}}" class="clearfix">
-                                            <span class="price">{{$auto->kaina}} €</span>
+                                            <span class="price">{{$auto->kaina}} € @if($auto->pvm) + @lang('labels.pvm')@endif</span>
                                             <span class="icon-arrow-right2"></span>
                                         </a>
                                     </div>

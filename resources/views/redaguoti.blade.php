@@ -136,13 +136,13 @@
         <!-- privalumai 2 END-->
  
         <div class="row">
-            <div class="six columns">
+            <div class="eight columns">
                 <small>Darbini tūris cm³</small>
                 <div class="input">
                     {!! Form::text('darbinis_turis', null, array('class' => 'form-control', 'type' => 'number', 'placeholder' => 'Darbinis tūris (cm³) pvz: 1300', 'step' => '1', 'max' => '10000')) !!}
                 </div>
             </div>
-            <div class="six columns">
+            <div class="four columns">
                 <div class="checkbox">
                     {!! Form::checkbox('greitai', 1, null, ['id' =>'pranc', 'class' => 'form-control', 'type' => 'checkbox', 'value' => '1']) !!}
                     <label for="pranc">Dar Prancūzijoje</label>
@@ -204,10 +204,16 @@
 
         <!-- Kaina -->
         <div class="row">
-            <div class="twelve columns alpha">
+            <div class="eight columns alpha">
                 <small>Kaina</small>
                 <div class="input">
                     {!! Form::text('kaina', null, array('class' => 'form-control', 'type' => 'number', 'placeholder' => 'Kaina', 'step' => '1', 'max' => '200000', 'required')) !!}
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="checkbox">
+                    {!! Form::checkbox('pvm', 1, null, ['id' =>'pvm', 'class' => 'form-control', 'type' => 'checkbox', 'value' => '1']) !!}
+                    <label for="pvm">+ PVM</label>
                 </div>
             </div>
         </div>
