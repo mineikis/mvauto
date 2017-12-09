@@ -77,4 +77,6 @@ return [
 'telefonas' => 'Phone number',
 'zinute' => 'Your message',
 'siusti' => 'Send',
+'sent_success' => 'Message was sent!',
+'sent_fail' => 'Sending message failed! Please try again.',
 ];

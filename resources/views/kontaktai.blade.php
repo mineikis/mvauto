@@ -21,14 +21,14 @@
         <div class="container">
             <div class="row">
 
-                <div class="promo">
+                <div class="promo zinute">
 
-                    <div class="dark-form">
+                    <div class="dark-form pranesimas">
                         <h3><b>@lang('labels.susisiekite_su_mumis')</b>
                         </h3>
                         <h4>@lang('tekstai.susisiekite_su_mumis')</h4>
                         <div class="send_result"></div>
-                        <form class="contactform" method="post" action="contact_process.php">
+                        {!! Form::open() !!}
                             <fieldset>
                                 <div class="three columns alpha">
 
@@ -37,7 +37,7 @@
                                     </div>
 
                                     <div class="input">
-                                        <input type="text" placeholder="@lang('labels.el_pastas')" name="email" />
+                                        <input type="text" placeholder="@lang('labels.el_pastas')" name="email"/>
                                     </div>
                                     <div class="input">
                                         <input type="text" placeholder="@lang('labels.telefonas')" name="phonenumber"/>
@@ -50,12 +50,12 @@
                                 </div>
                                 <div class="three columns">
                                     <div class="input-submit">
-                                        <input type="submit" value="@lang('labels.siusti')" class="submitform" />
+                                    {!! Form::submit(Lang::get('labels.siusti'))!!}
                                     </div>
                                 </div>
 
                             </fieldset>
-                        </form>
+                        {!! Form::close() !!}
                     </div>
 
                 </div>
@@ -82,7 +82,7 @@
 
                         <!-- image -->
                         <div class="car-image">
-                            <a href="/automobilis/{{$auto->id}}">
+                            <a href="/automobilis/{{$auto->id}}" style="height:unset">
                                 <img src="{{ URL::asset('images/'.$auto->id.'/1.jpg') }}" title="car" alt="car" />
                                 <span class="background">
                                     <span class="icon-plus"></span>
@@ -142,3 +142,27 @@
 @include('subfooter')
 @show
 @stop
+
+<script type="text/javascript" src="{{ URL::asset('https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js') }}"></script>
+<script>
+    $(document).ready(function(){
+    $('form').submit(function( event ) {
+    event.preventDefault();
+
+    var el = $(this);
+    $.ajax({
+        url: '/send',
+        type: 'post',
+        data: $('form').serialize(),
+        dataType: 'json',
+        success: function( _response ){
+            $('.pranesimas').remove();
+            $( ".zinute" ).append( $("<h1 style='color:white;'>@lang('labels.sent_success')</h1>"));
+        },
+        error: function( _response ){
+            $( ".zinute" ).append( $("<h1 style='color:white;'>@lang('labels.sent_fail')</h1>"));
+        }
+    });
+});
+});
+</script>

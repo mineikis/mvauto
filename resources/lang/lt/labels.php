@@ -77,4 +77,6 @@ return [
 'telefonas' => 'Telefonas',
 'zinute' => 'Jūsų žinutė',
 'siusti' => 'Siųsti',
+'sent_success' => 'Pranešimas išsiųstas sėkmingai!',
+'sent_fail' => 'Nepavyko išsiųsti pranšimo! Prašome bandyti dar kartą.',
 ];

@@ -37,6 +37,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 Route::get('logout', 'PradziaController@logout');
 Route::get('login', 'PradziaController@login');
 Route::post('authenticate', 'PradziaController@doLogin');
+Route::post('/send', 'KontaktaiController@send');
 
 Route::group( ['middleware' => 'auth' ], function(){
 	Route::get('admin', 'AdminController@index');
