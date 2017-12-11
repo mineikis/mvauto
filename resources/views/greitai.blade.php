@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="pagination clearfix">
+            <div class="pagination clearfix" style="margin:unset;">
                 <!-- <h3>Current listing gives <b>1.234</b> cars in <b>12</b> pages</h3> -->
 
                 <!-- pagination & sort by -->
@@ -114,7 +114,7 @@
     <!-- .3 -->
 
     <div class="row">
-        <div class="pagination">
+        <div class="pagination" style="margin:unset;">
             <ul class="pagination-list clearfix">
                 @if($next > -1)
                 <li><a href="/greitai/{{$prev}}">&laquo; @lang('labels.buves')</a>

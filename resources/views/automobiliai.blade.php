@@ -12,8 +12,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="pagination clearfix">
-
+            <div class="pagination clearfix" style="margin:unset;">
                 <!-- pagination & sort by -->
                 <div class="ten columns alpha">
                     <ul class="pagination-list clearfix">
@@ -113,7 +112,7 @@
     <!-- .3 -->
 
     <div class="row">
-        <div class="pagination">
+        <div class="pagination" style="margin:unset;">
             <ul class="pagination-list clearfix">
                 @if($next > -1)
                 <li><a href="/automobiliai/{{$prev}}">&laquo; @lang('labels.buves')</a>

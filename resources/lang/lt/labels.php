@@ -24,7 +24,7 @@ return [
 
 //automobiliai
 'greitai' => 'Greitai',
-'automobiliu_sarasas' => 'Automobilių Sąrašas',
+'automobiliu_sarasas' => 'Automobiliai',
 'modelis' => 'Modelis',
 'marke' => 'Markė',
 'kaina' => 'Kaina',

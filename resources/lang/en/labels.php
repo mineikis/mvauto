@@ -24,7 +24,7 @@ return [
 
 //automobiliai
 'greitai' => 'Soon',
-'automobiliu_sarasas' => 'Car list',
+'automobiliu_sarasas' => 'Cars',
 'modelis' => 'Model',
 'marke' => 'Brand',
 'kaina' => 'Price',

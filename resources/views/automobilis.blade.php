@@ -133,7 +133,7 @@
                                                             </span>
                                                         </li>
                                                         <li>@lang('labels.pag_data'):
-                                                            <span> <b>{{ Carbon::parse($automobilis->pirmos_reg_data)->year}}-{{ Carbon::parse($automobilis->pirmos_reg_data)->month}}</b> 
+                                                            <span> <b>{{ Carbon::parse($automobilis->pirmos_reg_data)->year}}-{{ sprintf("%02d", Carbon::parse($automobilis->pirmos_reg_data)->month)}}</b> 
                                                             </span>
                                                         </li>
                                                         <li>@lang('labels.variklis'):

@@ -6,47 +6,22 @@
 <section>
 
     <div class="breadcrumbs">
-
+    <div class="main-search" style="background:unset;">
         <div class="container">
             <div class="row">
 
-                <div class="breadcrumbs-content clearfix">
+                <div class=" clearfix">
 
                     <div class="page-title">
-                        <h4>@lang('labels.automobiliu_sarasas')</h4>
-                        <a href="/">
-                            <span class="icon-home"></span>
-                        </a>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-
-    </div>
-
-
-</section>
-<!-- ================================================== END BREADCRUMBS ============================================== -->
-
-
-<!-- ================================================== MAIN SEARCH ================================================== -->
-<section>
-
-    <div class="main-search">
-        <div class="container">
-            <div class="row">
-
-                <!-- quick search -->
-                <form method="" action="">
+                    
+                        <form method="" action="">
                     <fieldset>
-
                         <!-- quick search fields -->
                         <div class="quick-search-fields" data-appear-animation="slideInLeft">
-                            <div class="ten columns clearfix">
+                            <div class="twelve columns clearfix">
                                 <!-- select input -->
                                 <div class="two columns">
+                                    <h5 style="color:white;">@lang('labels.automobiliu_sarasas')</h5>
                                 </div>
                                 <!-- select input -->
                                 <div class="two columns">
@@ -115,6 +90,8 @@
                                             @endforeach
                                         </select>
                                     </div>
+
+                        </div>
                                 </div>
                                 <!-- .select input -->
 
@@ -124,14 +101,14 @@
 
                     </fieldset>
                 </form>
-                <!-- .Quick Search -->
 
-
+                    </div>
+                </div>
             </div>
         </div>
+</div>
     </div>
 
-</section>
-<!-- ================================================== END MAIN SEARCH ================================================== -->
 
+</section>
 @stop

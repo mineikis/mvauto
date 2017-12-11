@@ -23,7 +23,7 @@ return [
 'visi_skelbimai' => 'Проверить все объявления',
 
 //automobiliai
-'automobiliu_sarasas' => 'Список автомобилей',
+'automobiliu_sarasas' => 'Aвтомобили',
 'greitai' => 'Cкоро',
 'modelis' => 'Mодель',
 'marke' => 'Mаркa',
