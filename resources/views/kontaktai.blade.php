@@ -82,7 +82,7 @@
 
                         <!-- image -->
                         <div class="car-image">
-                            <a href="/automobilis/{{$auto->id}}" style="height:unset">
+                            <a href="/automobilis/{{$auto->id}}" style="height:auto">
                                 <img src="{{ URL::asset('images/'.$auto->id.'/1.jpg') }}" title="car" alt="car" />
                                 <span class="background">
                                     <span class="icon-plus"></span>

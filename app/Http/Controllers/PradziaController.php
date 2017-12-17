@@ -25,7 +25,8 @@ class PradziaController extends Controller
 
 	public function nuotraukos($id){
 		$nuotraukos = array();
-		foreach (glob(public_path().'/images/'.$id.'/*.jpg') as $file) {
+		for ($i = 1; $i < 6; $i++){
+			$file = public_path().'/images/'.$id.'/'.$i .'.jpg';
 			$nuotraukos[] = basename($file);
 		}
 		natsort($nuotraukos);

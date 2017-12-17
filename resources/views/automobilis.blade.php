@@ -32,6 +32,16 @@
                     </div>
                     <!-- .car single header -->
 
+                    <div class="popup-gallery">
+                        @foreach($nuotraukos as $key => $nuotrauka)
+                            @if($key > 0)
+                                <a href="{{ URL::asset('images/'.$automobilis->id.'/'.$nuotrauka) }}" title="s"></a>
+                            @endif
+                        @endforeach
+                        <a href="{{ URL::asset('images/'.$automobilis->id.'/1.jpg') }}" class="button full light" data-effect="mfp-zoom-out">
+                        <span class="icon-images"></span>@lang('labels.galerija')</a>
+                    </div>
+
                     <!-- car single body -->
                     <div class="car-single-body clearfix" data-appear-animation="slideInLeft">
                         <!-- car single media -->

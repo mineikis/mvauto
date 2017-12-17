@@ -69,6 +69,7 @@ return [
 'tiuningas' => 'Тюнинг ',
 'kiti_ypatumai' => 'Другие',
 'pvm' => 'НДС',
+'galerija' => 'Галерея',
 
 //kontaktai
 'vardas' => 'Имя',

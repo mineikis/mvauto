@@ -36,7 +36,7 @@
                 </div>
                 <nav>
                     <div class="main-nav">
-                        <ul class="main-navigation nav-1 inline">
+                        <ul class="main-navigation pills">
                             <li><a href="/" class="{{ Request::is(LaravelLocalization::getCurrentLocale()) ? 'active' : ''}}">@lang('labels.pradzia')</a> 
                             </li>
                             <li><a href="/automobiliai/1" class="{{ Request::is(LaravelLocalization::getCurrentLocale().'/automobiliai/1') ? 'active' : ''}}">@lang('labels.automobiliai')</a> 

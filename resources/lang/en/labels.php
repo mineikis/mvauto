@@ -69,6 +69,7 @@ return [
 'tiuningas' => 'Tuning',
 'kiti_ypatumai' => 'Other',
 'pvm' => 'VAT',
+'galerija' => 'Gallery',
 
 
 //kontaktai

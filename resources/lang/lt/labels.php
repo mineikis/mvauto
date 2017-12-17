@@ -69,6 +69,7 @@ return [
 'tiuningas' => 'Tiuningas',
 'kiti_ypatumai' => 'Kiti',
 'pvm' => 'PVM',
+'galerija' => 'Galerija',
 
 
 //kontaktai
